@@ -219,7 +219,7 @@ relationship OneToOne {
 }
 
 relationship ManyToMany {
-  Customer{preferredLocales} to PreferredLocales
+  Customer{preferredLocales} to PreferredLocales{customer}
 }
 
 
