@@ -1,0 +1,48 @@
+{
+  "madaskillApp": {
+    "product": {
+      "home": {
+        "title": "Products",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product",
+        "createOrEditLabel": "Create or edit a Product",
+        "notFound": "No Products found"
+      },
+      "created": "A new Product is created with identifier {{ param }}",
+      "updated": "A Product is updated with identifier {{ param }}",
+      "deleted": "A Product is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product {{ id }}?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "id": "ID",
+      "object": "Object",
+      "active": "Active",
+      "created": "Created",
+      "defaultPrice": "Default Price",
+      "description": "Description",
+      "livemode": "Livemode",
+      "name": "Name",
+      "shippable": "Shippable",
+      "statementDescriptor": "Statement Descriptor",
+      "taxCode": "Tax Code",
+      "unitLabel": "Unit Label",
+      "updated": "Updated",
+      "url": "Url",
+      "sku": "Sku",
+      "title": "Title",
+      "linkToGenericPhotoFile": "Link To Generic Photo File",
+      "availableSizes": "Available Sizes",
+      "currencyFormat": "Currency Format",
+      "isFreeShipping": "Is Free Shipping",
+      "price": "Price",
+      "style": "Style",
+      "installments": "Installments",
+      "photos": "Photos",
+      "lineItem": "Line Item",
+      "user": "User"
+    }
+  }
+}

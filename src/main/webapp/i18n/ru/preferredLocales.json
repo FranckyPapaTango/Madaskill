@@ -1,0 +1,25 @@
+{
+  "madaskillApp": {
+    "preferredLocales": {
+      "home": {
+        "title": "Preferred Locales",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Preferred Locales",
+        "createOrEditLabel": "Создать или отредактировать Preferred Locales",
+        "notFound": "Preferred Locales не найдено"
+      },
+      "created": "Новый Preferred Locales создан с идентификатором {{ param }}",
+      "updated": "Preferred Locales обновлен с идентификатором {{ param }}",
+      "deleted": "Preferred Locales удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Preferred Locales {{ id }}?"
+      },
+      "detail": {
+        "title": "Preferred Locales"
+      },
+      "id": "Id",
+      "preferredLocales": "Preferred Locales",
+      "customer": "Customer"
+    }
+  }
+}

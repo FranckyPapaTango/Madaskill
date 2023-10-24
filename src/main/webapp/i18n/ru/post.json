@@ -1,0 +1,31 @@
+{
+  "madaskillApp": {
+    "post": {
+      "home": {
+        "title": "Posts",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Post",
+        "createOrEditLabel": "Создать или отредактировать Post",
+        "notFound": "Posts не найдено"
+      },
+      "created": "Новый Post создан с идентификатором {{ param }}",
+      "updated": "Post обновлен с идентификатором {{ param }}",
+      "deleted": "Post удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Post {{ id }}?"
+      },
+      "detail": {
+        "title": "Post"
+      },
+      "id": "ID",
+      "title": "Title",
+      "body": "Body",
+      "categorie": "Categorie",
+      "resumee": "Resumee",
+      "auteur": "Auteur",
+      "datePersistence": "Date Persistence",
+      "photos": "Photos",
+      "user": "User"
+    }
+  }
+}

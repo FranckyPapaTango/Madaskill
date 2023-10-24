@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Invoice.
+    -->
+    <changeSet id="20231024102159-1" author="jhipster">
+        <createTable tableName="invoice">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="object" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="account_country" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="account_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="account_tax_ids" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="amount_due" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="amount_paid" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="amount_remaining" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="amount_shipping" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="application" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="application_fee_amount" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="attempt_count" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="attempted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="auto_advance" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="billing_reason" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="charge" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="collection_method" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="created" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="custom_fields" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_string_value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_address" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_phone" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_shipping" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_tax_exempt" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_tax_ids" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="default_payment_method" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="default_source" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="default_tax_rates" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="discount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="discounts" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="due_date" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="effective_at" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="ending_balance" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="footer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="from_invoice" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hosted_invoice_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="invoice_pdf" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_finalization_error" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="latest_revision" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="livemode" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="metadata" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="next_payment_attempt" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="on_behalf_of" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="paid" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="paid_out_of_band" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="payment_intent" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="payment_settings" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="period_end" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="period_start" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="post_payment_credit_notes_amount" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="pre_payment_credit_notes_amount" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="quote" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="receipt_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rendering" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rendering_options" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="shipping_cost" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="shipping_details" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="starting_balance" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="statement_descriptor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status_transitions" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subscription" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subscription_details" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subtotal" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="subtotal_excluding_tax" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="tax" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="test_clock" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="total" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_discount_amounts" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_excluding_tax" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_tax_amounts" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="transfer_data" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="webhooks_delivered_at" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="commande_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_invoice__commande_id" />
+            </column>
+            <column name="customer_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20231024102159-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/invoice.csv"
+                  separator=";"
+                  tableName="invoice"
+                  usePreparedStatements="true">
+            <column name="id" type="string"/>
+            <column name="object" type="string"/>
+            <column name="account_country" type="string"/>
+            <column name="account_name" type="string"/>
+            <column name="account_tax_ids" type="string"/>
+            <column name="amount_due" type="numeric"/>
+            <column name="amount_paid" type="numeric"/>
+            <column name="amount_remaining" type="numeric"/>
+            <column name="amount_shipping" type="numeric"/>
+            <column name="application" type="string"/>
+            <column name="application_fee_amount" type="numeric"/>
+            <column name="attempt_count" type="numeric"/>
+            <column name="attempted" type="boolean"/>
+            <column name="auto_advance" type="boolean"/>
+            <column name="billing_reason" type="string"/>
+            <column name="charge" type="string"/>
+            <column name="collection_method" type="string"/>
+            <column name="created" type="numeric"/>
+            <column name="currency" type="string"/>
+            <column name="custom_fields" type="string"/>
+            <column name="customer_string_value" type="string"/>
+            <column name="customer_address" type="string"/>
+            <column name="customer_email" type="string"/>
+            <column name="customer_name" type="string"/>
+            <column name="customer_phone" type="string"/>
+            <column name="customer_shipping" type="string"/>
+            <column name="customer_tax_exempt" type="string"/>
+            <column name="customer_tax_ids" type="string"/>
+            <column name="default_payment_method" type="string"/>
+            <column name="default_source" type="string"/>
+            <column name="default_tax_rates" type="string"/>
+            <column name="description" type="string"/>
+            <column name="discount" type="string"/>
+            <column name="discounts" type="string"/>
+            <column name="due_date" type="numeric"/>
+            <column name="effective_at" type="numeric"/>
+            <column name="ending_balance" type="numeric"/>
+            <column name="footer" type="string"/>
+            <column name="from_invoice" type="string"/>
+            <column name="hosted_invoice_url" type="string"/>
+            <column name="invoice_pdf" type="string"/>
+            <column name="last_finalization_error" type="string"/>
+            <column name="latest_revision" type="string"/>
+            <column name="livemode" type="boolean"/>
+            <column name="metadata" type="string"/>
+            <column name="next_payment_attempt" type="numeric"/>
+            <column name="number" type="string"/>
+            <column name="on_behalf_of" type="string"/>
+            <column name="paid" type="boolean"/>
+            <column name="paid_out_of_band" type="boolean"/>
+            <column name="payment_intent" type="string"/>
+            <column name="payment_settings" type="string"/>
+            <column name="period_end" type="numeric"/>
+            <column name="period_start" type="numeric"/>
+            <column name="post_payment_credit_notes_amount" type="numeric"/>
+            <column name="pre_payment_credit_notes_amount" type="numeric"/>
+            <column name="quote" type="string"/>
+            <column name="receipt_number" type="string"/>
+            <column name="rendering" type="string"/>
+            <column name="rendering_options" type="string"/>
+            <column name="shipping_cost" type="numeric"/>
+            <column name="shipping_details" type="string"/>
+            <column name="starting_balance" type="numeric"/>
+            <column name="statement_descriptor" type="string"/>
+            <column name="status" type="string"/>
+            <column name="status_transitions" type="string"/>
+            <column name="subscription" type="string"/>
+            <column name="subscription_details" type="string"/>
+            <column name="subtotal" type="numeric"/>
+            <column name="subtotal_excluding_tax" type="numeric"/>
+            <column name="tax" type="string"/>
+            <column name="test_clock" type="string"/>
+            <column name="total" type="numeric"/>
+            <column name="total_discount_amounts" type="string"/>
+            <column name="total_excluding_tax" type="numeric"/>
+            <column name="total_tax_amounts" type="string"/>
+            <column name="transfer_data" type="string"/>
+            <column name="webhooks_delivered_at" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

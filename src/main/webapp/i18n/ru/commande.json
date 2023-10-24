@@ -1,0 +1,30 @@
+{
+  "madaskillApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Commande",
+        "createOrEditLabel": "Создать или отредактировать Commande",
+        "notFound": "Commandes не найдено"
+      },
+      "created": "Новый Commande создан с идентификатором {{ param }}",
+      "updated": "Commande обновлен с идентификатором {{ param }}",
+      "deleted": "Commande удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Commande {{ id }}?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "id": "ID",
+      "dateCommande": "Date Commande",
+      "tva": "Tva",
+      "taxesTotales": "Taxes Totales",
+      "montantAmountTtc": "Montant Amount Ttc",
+      "isPayedIsFacture": "Is Payed Is Facture",
+      "lineItem": "Line Item",
+      "customer": "Customer"
+    }
+  }
+}

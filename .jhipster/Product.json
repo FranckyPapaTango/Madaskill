@@ -1,0 +1,126 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024102151",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "object",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "defaultPrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livemode",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "shippable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "statementDescriptor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitLabel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updated",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sku",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "linkToGenericPhotoFile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "availableSizes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currencyFormat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isFreeShipping",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "style",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "installments",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Product",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "photo",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "photos",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "lineItem",
+      "otherEntityRelationshipName": "product",
+      "ownerSide": false,
+      "relationshipName": "lineItem",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

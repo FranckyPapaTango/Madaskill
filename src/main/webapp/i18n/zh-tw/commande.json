@@ -1,0 +1,30 @@
+{
+  "madaskillApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Commande",
+        "createOrEditLabel": "建立或編輯 Commande",
+        "notFound": "No Commandes found"
+      },
+      "created": "新的 Commande 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Commande 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Commande 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Commande {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "id": "ID",
+      "dateCommande": "Date Commande",
+      "tva": "Tva",
+      "taxesTotales": "Taxes Totales",
+      "montantAmountTtc": "Montant Amount Ttc",
+      "isPayedIsFacture": "Is Payed Is Facture",
+      "lineItem": "Line Item",
+      "customer": "Customer"
+    }
+  }
+}

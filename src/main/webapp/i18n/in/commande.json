@@ -1,0 +1,30 @@
+{
+  "madaskillApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Commande baru",
+        "createOrEditLabel": "Buat atau edit Commande",
+        "notFound": "No Commandes found"
+      },
+      "created": "Commande dengan id {{ param }} telah dibuat",
+      "updated": "Commande dengan id {{ param }} telah diperbaharui",
+      "deleted": "Commande dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Commande {{ id }}?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "id": "ID",
+      "dateCommande": "Date Commande",
+      "tva": "Tva",
+      "taxesTotales": "Taxes Totales",
+      "montantAmountTtc": "Montant Amount Ttc",
+      "isPayedIsFacture": "Is Payed Is Facture",
+      "lineItem": "Line Item",
+      "customer": "Customer"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "madaskillApp": {
+    "photo": {
+      "home": {
+        "title": "Photos",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Photo",
+        "createOrEditLabel": "Créer ou éditer un Photo",
+        "notFound": "Aucun Photo trouvé"
+      },
+      "created": "Un nouveau Photo a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Photo avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Photo avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Photo {{ id }} ?"
+      },
+      "detail": {
+        "title": "Photo"
+      },
+      "id": "ID",
+      "title": "Title",
+      "linkToPhotoFile": "Link To Photo File",
+      "description": "Description",
+      "author": "Author",
+      "owner": "Owner",
+      "height": "Height",
+      "width": "Width",
+      "taken": "Taken",
+      "uploaded": "Uploaded",
+      "post": "Post",
+      "product": "Product"
+    }
+  }
+}

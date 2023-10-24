@@ -1,0 +1,122 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024102200",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "line_item",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "object",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amountExcludingTax",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discountAmounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discountable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "discounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "invoiceItem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livemode",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "metadata",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "periodEnd",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "periodStart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "proration",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "prorationDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "subscription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxAmounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxRates",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitAmountExcludingTax",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LineItem",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "lineItem",
+      "ownerSide": true,
+      "relationshipName": "product",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "lineItem",
+      "relationshipName": "commande",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

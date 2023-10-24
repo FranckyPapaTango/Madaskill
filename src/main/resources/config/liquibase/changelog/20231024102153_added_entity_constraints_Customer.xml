@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Customer.
+    -->
+    <changeSet id="20231024102153-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="invoice_settings_id"
+                                 baseTableName="customer"
+                                 constraintName="fk_customer__invoice_settings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="invoice_settings"/>
+
+        <addForeignKeyConstraint baseColumnNames="metadata_id"
+                                 baseTableName="customer"
+                                 constraintName="fk_customer__metadata_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metadata"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="rel_customer__preferred_locales"
+                                 constraintName="fk_rel_customer__preferred_locales__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+        <addForeignKeyConstraint baseColumnNames="preferred_locales_id"
+                                 baseTableName="rel_customer__preferred_locales"
+                                 constraintName="fk_rel_customer__preferred_locales__preferred_locales_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="preferred_locales"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,47 @@
+{
+  "madaskillApp": {
+    "lineItem": {
+      "home": {
+        "title": "LineItems",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Line Item",
+        "createOrEditLabel": "Créer ou éditer un Line Item",
+        "notFound": "Aucun Line Item trouvé"
+      },
+      "created": "Un nouveau Line Item a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Line Item avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Line Item avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Line Item {{ id }} ?"
+      },
+      "detail": {
+        "title": "Line Item"
+      },
+      "id": "Id",
+      "object": "Object",
+      "amount": "Amount",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "currency": "Currency",
+      "description": "Description",
+      "discountAmounts": "Discount Amounts",
+      "discountable": "Discountable",
+      "discounts": "Discounts",
+      "invoiceItem": "Invoice Item",
+      "livemode": "Livemode",
+      "metadata": "Metadata",
+      "periodEnd": "Period End",
+      "periodStart": "Period Start",
+      "price": "Price",
+      "proration": "Proration",
+      "prorationDetails": "Proration Details",
+      "quantity": "Quantity",
+      "subscription": "Subscription",
+      "taxAmounts": "Tax Amounts",
+      "taxRates": "Tax Rates",
+      "type": "Type",
+      "unitAmountExcludingTax": "Unit Amount Excluding Tax",
+      "product": "Product",
+      "commande": "Commande"
+    }
+  }
+}

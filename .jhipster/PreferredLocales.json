@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024102156",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "preferred_locales",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "preferredLocales",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PreferredLocales",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "preferredLocales",
+      "ownerSide": false,
+      "relationshipName": "customer",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

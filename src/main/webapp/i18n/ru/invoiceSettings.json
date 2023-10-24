@@ -1,0 +1,27 @@
+{
+  "madaskillApp": {
+    "invoiceSettings": {
+      "home": {
+        "title": "Invoice Settings",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Invoice Settings",
+        "createOrEditLabel": "Создать или отредактировать Invoice Settings",
+        "notFound": "Invoice Settings не найдено"
+      },
+      "created": "Новый Invoice Settings создан с идентификатором {{ param }}",
+      "updated": "Invoice Settings обновлен с идентификатором {{ param }}",
+      "deleted": "Invoice Settings удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Invoice Settings {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice Settings"
+      },
+      "id": "Id",
+      "customFields": "Custom Fields",
+      "defaultPaymentMethod": "Default Payment Method",
+      "footer": "Footer",
+      "renderingOptions": "Rendering Options"
+    }
+  }
+}

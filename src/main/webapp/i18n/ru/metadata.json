@@ -1,0 +1,24 @@
+{
+  "madaskillApp": {
+    "metadata": {
+      "home": {
+        "title": "Metadata",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Metadata",
+        "createOrEditLabel": "Создать или отредактировать Metadata",
+        "notFound": "Metadata не найдено"
+      },
+      "created": "Новый Metadata создан с идентификатором {{ param }}",
+      "updated": "Metadata обновлен с идентификатором {{ param }}",
+      "deleted": "Metadata удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Metadata"
+      },
+      "id": "Id",
+      "orderId": "Order Id"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "madaskillApp": {
+    "metadata": {
+      "home": {
+        "title": "Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Metadata baru",
+        "createOrEditLabel": "Buat atau edit Metadata",
+        "notFound": "No Metadata found"
+      },
+      "created": "Metadata dengan id {{ param }} telah dibuat",
+      "updated": "Metadata dengan id {{ param }} telah diperbaharui",
+      "deleted": "Metadata dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Metadata"
+      },
+      "id": "Id",
+      "orderId": "Order Id"
+    }
+  }
+}

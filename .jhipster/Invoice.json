@@ -1,0 +1,342 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024102159",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "invoice",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "object",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountCountry",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountTaxIds",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountDue",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amountPaid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amountRemaining",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "amountShipping",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "application",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "applicationFeeAmount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "attemptCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "attempted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "autoAdvance",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "billingReason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "charge",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectionMethod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customFields",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerStringValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerPhone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerShipping",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerTaxExempt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "customerTaxIds",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "defaultPaymentMethod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "defaultSource",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "defaultTaxRates",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "effectiveAt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "endingBalance",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "footer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fromInvoice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hostedInvoiceUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "invoicePdf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastFinalizationError",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "latestRevision",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livemode",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "metadata",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nextPaymentAttempt",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "number",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "onBehalfOf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paid",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "paidOutOfBand",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "paymentIntent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentSettings",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "periodEnd",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "periodStart",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "postPaymentCreditNotesAmount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "prePaymentCreditNotesAmount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "quote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receiptNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rendering",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "renderingOptions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "shippingCost",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "shippingDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startingBalance",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "statementDescriptor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "statusTransitions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subscriptionDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subtotal",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "subtotalExcludingTax",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "testClock",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalDiscountAmounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalExcludingTax",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalTaxAmounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transferData",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "webhooksDeliveredAt",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Invoice",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "customer",
+      "ownerSide": true,
+      "relationshipName": "commande",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "customer",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

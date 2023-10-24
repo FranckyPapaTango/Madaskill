@@ -1,0 +1,24 @@
+{
+  "madaskillApp": {
+    "metadata": {
+      "home": {
+        "title": "Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Metadata",
+        "createOrEditLabel": "建立或編輯 Metadata",
+        "notFound": "No Metadata found"
+      },
+      "created": "新的 Metadata 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Metadata 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Metadata 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Metadata {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Metadata"
+      },
+      "id": "Id",
+      "orderId": "Order Id"
+    }
+  }
+}

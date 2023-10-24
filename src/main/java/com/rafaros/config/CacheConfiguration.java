@@ -51,6 +51,25 @@ public class CacheConfiguration {
             createCache(cm, com.rafaros.domain.User.class.getName());
             createCache(cm, com.rafaros.domain.Authority.class.getName());
             createCache(cm, com.rafaros.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.rafaros.domain.Post.class.getName());
+            createCache(cm, com.rafaros.domain.Post.class.getName() + ".photos");
+            createCache(cm, com.rafaros.domain.Product.class.getName());
+            createCache(cm, com.rafaros.domain.Product.class.getName() + ".photos");
+            createCache(cm, com.rafaros.domain.ApplicationUser.class.getName());
+            createCache(cm, com.rafaros.domain.ApplicationUser.class.getName() + ".posts");
+            createCache(cm, com.rafaros.domain.ApplicationUser.class.getName() + ".products");
+            createCache(cm, com.rafaros.domain.Customer.class.getName());
+            createCache(cm, com.rafaros.domain.Customer.class.getName() + ".invoices");
+            createCache(cm, com.rafaros.domain.Customer.class.getName() + ".preferredLocales");
+            createCache(cm, com.rafaros.domain.InvoiceSettings.class.getName());
+            createCache(cm, com.rafaros.domain.Metadata.class.getName());
+            createCache(cm, com.rafaros.domain.PreferredLocales.class.getName());
+            createCache(cm, com.rafaros.domain.PreferredLocales.class.getName() + ".customers");
+            createCache(cm, com.rafaros.domain.Commande.class.getName());
+            createCache(cm, com.rafaros.domain.Commande.class.getName() + ".lineItems");
+            createCache(cm, com.rafaros.domain.Photo.class.getName());
+            createCache(cm, com.rafaros.domain.Invoice.class.getName());
+            createCache(cm, com.rafaros.domain.LineItem.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

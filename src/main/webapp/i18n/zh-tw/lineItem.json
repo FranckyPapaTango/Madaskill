@@ -1,0 +1,47 @@
+{
+  "madaskillApp": {
+    "lineItem": {
+      "home": {
+        "title": "Line Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Line Item",
+        "createOrEditLabel": "建立或編輯 Line Item",
+        "notFound": "No Line Items found"
+      },
+      "created": "新的 Line Item 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Line Item 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Line Item 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Line Item {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Line Item"
+      },
+      "id": "Id",
+      "object": "Object",
+      "amount": "Amount",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "currency": "Currency",
+      "description": "Description",
+      "discountAmounts": "Discount Amounts",
+      "discountable": "Discountable",
+      "discounts": "Discounts",
+      "invoiceItem": "Invoice Item",
+      "livemode": "Livemode",
+      "metadata": "Metadata",
+      "periodEnd": "Period End",
+      "periodStart": "Period Start",
+      "price": "Price",
+      "proration": "Proration",
+      "prorationDetails": "Proration Details",
+      "quantity": "Quantity",
+      "subscription": "Subscription",
+      "taxAmounts": "Tax Amounts",
+      "taxRates": "Tax Rates",
+      "type": "Type",
+      "unitAmountExcludingTax": "Unit Amount Excluding Tax",
+      "product": "Product",
+      "commande": "Commande"
+    }
+  }
+}

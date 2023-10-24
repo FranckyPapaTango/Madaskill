@@ -1,0 +1,45 @@
+{
+  "madaskillApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Customer baru",
+        "createOrEditLabel": "Buat atau edit Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "Customer dengan id {{ param }} telah dibuat",
+      "updated": "Customer dengan id {{ param }} telah diperbaharui",
+      "deleted": "Customer dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "id": "Id",
+      "object": "Object",
+      "address": "Address",
+      "balance": "Balance",
+      "created": "Created",
+      "currency": "Currency",
+      "defaultSource": "Default Source",
+      "delinquent": "Delinquent",
+      "description": "Description",
+      "discount": "Discount",
+      "email": "Email",
+      "invoicePrefix": "Invoice Prefix",
+      "livemode": "Livemode",
+      "name": "Name",
+      "nextInvoiceSequence": "Next Invoice Sequence",
+      "phone": "Phone",
+      "shipping": "Shipping",
+      "taxExempt": "Tax Exempt",
+      "testClock": "Test Clock",
+      "invoiceSettings": "Invoice Settings",
+      "metadata": "Metadata",
+      "invoice": "Invoice",
+      "preferredLocales": "Preferred Locales"
+    }
+  }
+}

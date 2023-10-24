@@ -1,0 +1,47 @@
+{
+  "madaskillApp": {
+    "lineItem": {
+      "home": {
+        "title": "Line Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Line Item",
+        "createOrEditLabel": "创建或编辑 Line Item",
+        "notFound": "No Line Items found"
+      },
+      "created": "Line Item {{ param }} 创建成功",
+      "updated": "Line Item {{ param }} 更新成功",
+      "deleted": "Line Item {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Line Item {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Line Item"
+      },
+      "id": "Id",
+      "object": "Object",
+      "amount": "Amount",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "currency": "Currency",
+      "description": "Description",
+      "discountAmounts": "Discount Amounts",
+      "discountable": "Discountable",
+      "discounts": "Discounts",
+      "invoiceItem": "Invoice Item",
+      "livemode": "Livemode",
+      "metadata": "Metadata",
+      "periodEnd": "Period End",
+      "periodStart": "Period Start",
+      "price": "Price",
+      "proration": "Proration",
+      "prorationDetails": "Proration Details",
+      "quantity": "Quantity",
+      "subscription": "Subscription",
+      "taxAmounts": "Tax Amounts",
+      "taxRates": "Tax Rates",
+      "type": "Type",
+      "unitAmountExcludingTax": "Unit Amount Excluding Tax",
+      "product": "Product",
+      "commande": "Commande"
+    }
+  }
+}

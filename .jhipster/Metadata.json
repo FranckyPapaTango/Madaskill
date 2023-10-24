@@ -1,0 +1,25 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024102155",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "metadata",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orderId",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Metadata",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

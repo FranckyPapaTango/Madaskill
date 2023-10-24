@@ -1,0 +1,119 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024102153",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "customer",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "object",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "defaultSource",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delinquent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "invoicePrefix",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "livemode",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nextInvoiceSequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "shipping",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxExempt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "testClock",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Customer",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "invoiceSettings",
+      "ownerSide": true,
+      "relationshipName": "invoiceSettings",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "metadata",
+      "ownerSide": true,
+      "relationshipName": "metadata",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "invoice",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "preferredLocales",
+      "otherEntityRelationshipName": "customer",
+      "ownerSide": true,
+      "relationshipName": "preferredLocales",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

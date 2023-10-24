@@ -7,6 +7,17 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Сущности",
+        "post": "Post",
+        "product": "Product",
+        "applicationUser": "Application User",
+        "customer": "Customer",
+        "invoiceSettings": "Invoice Settings",
+        "metadata": "Metadata",
+        "preferredLocales": "Preferred Locales",
+        "commande": "Commande",
+        "photo": "Photo",
+        "invoice": "Invoice",
+        "lineItem": "Line Item",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

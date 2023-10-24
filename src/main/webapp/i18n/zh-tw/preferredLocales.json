@@ -1,0 +1,25 @@
+{
+  "madaskillApp": {
+    "preferredLocales": {
+      "home": {
+        "title": "Preferred Locales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "建立一筆新的 Preferred Locales",
+        "createOrEditLabel": "建立或編輯 Preferred Locales",
+        "notFound": "No Preferred Locales found"
+      },
+      "created": "新的 Preferred Locales 建立成功，識別碼為 {{ param }}",
+      "updated": "識別碼為 {{ param }} 的 Preferred Locales 更新成功",
+      "deleted": "識別碼為 {{ param }} 的 Preferred Locales 刪除成功",
+      "delete": {
+        "question": "您確定要刪除 Preferred Locales {{ id }} 嗎?"
+      },
+      "detail": {
+        "title": "Preferred Locales"
+      },
+      "id": "Id",
+      "preferredLocales": "Preferred Locales",
+      "customer": "Customer"
+    }
+  }
+}

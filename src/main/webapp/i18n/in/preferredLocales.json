@@ -1,0 +1,25 @@
+{
+  "madaskillApp": {
+    "preferredLocales": {
+      "home": {
+        "title": "Preferred Locales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Preferred Locales baru",
+        "createOrEditLabel": "Buat atau edit Preferred Locales",
+        "notFound": "No Preferred Locales found"
+      },
+      "created": "Preferred Locales dengan id {{ param }} telah dibuat",
+      "updated": "Preferred Locales dengan id {{ param }} telah diperbaharui",
+      "deleted": "Preferred Locales dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Preferred Locales {{ id }}?"
+      },
+      "detail": {
+        "title": "Preferred Locales"
+      },
+      "id": "Id",
+      "preferredLocales": "Preferred Locales",
+      "customer": "Customer"
+    }
+  }
+}

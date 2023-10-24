@@ -1,0 +1,31 @@
+{
+  "madaskillApp": {
+    "applicationUser": {
+      "home": {
+        "title": "Application Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Application User baru",
+        "createOrEditLabel": "Buat atau edit Application User",
+        "notFound": "No Application Users found"
+      },
+      "created": "Application User dengan id {{ param }} telah dibuat",
+      "updated": "Application User dengan id {{ param }} telah diperbaharui",
+      "deleted": "Application User dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Application User {{ id }}?"
+      },
+      "detail": {
+        "title": "Application User"
+      },
+      "id": "ID",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "libelleAdresse": "Libelle Adresse",
+      "villeTown": "Ville Town",
+      "paysCountry": "Pays Country",
+      "internalUser": "Internal User",
+      "post": "Post",
+      "product": "Product"
+    }
+  }
+}

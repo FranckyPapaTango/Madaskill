@@ -1,0 +1,47 @@
+{
+  "madaskillApp": {
+    "lineItem": {
+      "home": {
+        "title": "Line Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Line Item",
+        "createOrEditLabel": "Create or edit a Line Item",
+        "notFound": "No Line Items found"
+      },
+      "created": "A new Line Item is created with identifier {{ param }}",
+      "updated": "A Line Item is updated with identifier {{ param }}",
+      "deleted": "A Line Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Line Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Line Item"
+      },
+      "id": "Id",
+      "object": "Object",
+      "amount": "Amount",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "currency": "Currency",
+      "description": "Description",
+      "discountAmounts": "Discount Amounts",
+      "discountable": "Discountable",
+      "discounts": "Discounts",
+      "invoiceItem": "Invoice Item",
+      "livemode": "Livemode",
+      "metadata": "Metadata",
+      "periodEnd": "Period End",
+      "periodStart": "Period Start",
+      "price": "Price",
+      "proration": "Proration",
+      "prorationDetails": "Proration Details",
+      "quantity": "Quantity",
+      "subscription": "Subscription",
+      "taxAmounts": "Tax Amounts",
+      "taxRates": "Tax Rates",
+      "type": "Type",
+      "unitAmountExcludingTax": "Unit Amount Excluding Tax",
+      "product": "Product",
+      "commande": "Commande"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "madaskillApp": {
+    "preferredLocales": {
+      "home": {
+        "title": "Preferred Locales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Preferred Locales",
+        "createOrEditLabel": "Create or edit a Preferred Locales",
+        "notFound": "No Preferred Locales found"
+      },
+      "created": "A new Preferred Locales is created with identifier {{ param }}",
+      "updated": "A Preferred Locales is updated with identifier {{ param }}",
+      "deleted": "A Preferred Locales is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Preferred Locales {{ id }}?"
+      },
+      "detail": {
+        "title": "Preferred Locales"
+      },
+      "id": "Id",
+      "preferredLocales": "Preferred Locales",
+      "customer": "Customer"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "madaskillApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Customer",
+        "createOrEditLabel": "Создать или отредактировать Customer",
+        "notFound": "Customers не найдено"
+      },
+      "created": "Новый Customer создан с идентификатором {{ param }}",
+      "updated": "Customer обновлен с идентификатором {{ param }}",
+      "deleted": "Customer удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "id": "Id",
+      "object": "Object",
+      "address": "Address",
+      "balance": "Balance",
+      "created": "Created",
+      "currency": "Currency",
+      "defaultSource": "Default Source",
+      "delinquent": "Delinquent",
+      "description": "Description",
+      "discount": "Discount",
+      "email": "Email",
+      "invoicePrefix": "Invoice Prefix",
+      "livemode": "Livemode",
+      "name": "Name",
+      "nextInvoiceSequence": "Next Invoice Sequence",
+      "phone": "Phone",
+      "shipping": "Shipping",
+      "taxExempt": "Tax Exempt",
+      "testClock": "Test Clock",
+      "invoiceSettings": "Invoice Settings",
+      "metadata": "Metadata",
+      "invoice": "Invoice",
+      "preferredLocales": "Preferred Locales"
+    }
+  }
+}

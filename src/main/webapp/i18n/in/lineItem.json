@@ -1,0 +1,47 @@
+{
+  "madaskillApp": {
+    "lineItem": {
+      "home": {
+        "title": "Line Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Buat Line Item baru",
+        "createOrEditLabel": "Buat atau edit Line Item",
+        "notFound": "No Line Items found"
+      },
+      "created": "Line Item dengan id {{ param }} telah dibuat",
+      "updated": "Line Item dengan id {{ param }} telah diperbaharui",
+      "deleted": "Line Item dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Line Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Line Item"
+      },
+      "id": "Id",
+      "object": "Object",
+      "amount": "Amount",
+      "amountExcludingTax": "Amount Excluding Tax",
+      "currency": "Currency",
+      "description": "Description",
+      "discountAmounts": "Discount Amounts",
+      "discountable": "Discountable",
+      "discounts": "Discounts",
+      "invoiceItem": "Invoice Item",
+      "livemode": "Livemode",
+      "metadata": "Metadata",
+      "periodEnd": "Period End",
+      "periodStart": "Period Start",
+      "price": "Price",
+      "proration": "Proration",
+      "prorationDetails": "Proration Details",
+      "quantity": "Quantity",
+      "subscription": "Subscription",
+      "taxAmounts": "Tax Amounts",
+      "taxRates": "Tax Rates",
+      "type": "Type",
+      "unitAmountExcludingTax": "Unit Amount Excluding Tax",
+      "product": "Product",
+      "commande": "Commande"
+    }
+  }
+}
