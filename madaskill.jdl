@@ -217,10 +217,15 @@ relationship OneToOne {
   Customer{invoiceSettings} to InvoiceSettings,
   Customer{metadata} to Metadata
 }
-relationship OneToMany {
-  Customer{preferredLocales} to PreferredLocales,
 
+relationship ManyToMany {
+  Customer{preferredLocales} to PreferredLocales
+}
+
+
+relationship OneToMany {
     Post{photos} to Photo{post},
+    Product{photos} to Photo{product}
     Commande{lineItem} to LineItem{commande},
     ApplicationUser{post} to Post{user},
     ApplicationUser{product} to Product{user},
@@ -248,3 +253,5 @@ service all with serviceImpl
 
 // Set an angular suffix
 // angularSuffix * with mySuffix
+//  Exécutez la commande suivante pour importer le projet JDL dans JHipster :
+//    jhipster import-jdl madaskill.jdl
