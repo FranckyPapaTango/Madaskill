@@ -1,3 +1,4 @@
+import AboutUs from 'app/modules/about-us/about-us';
 import React from 'react';
 import { Route, useLocation } from 'react-router-dom';
 import Loadable from 'react-loadable';
@@ -37,6 +38,7 @@ const AppRoutes = () => {
     <div className="view-routes">
       <ErrorBoundaryRoutes>
         <Route index element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route path="account">

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
 import initStore from 'app/config/store';
+import { AboutUs } from 'app/shared/layout/header/header-components';
 import Header from './header';
 
 describe('Header', () => {
@@ -95,6 +96,12 @@ describe('Header', () => {
     expect(html).toContain('account-menu');
   });
 
+  it('Renders AboutUs component.', () => {
+    const html = wrapper(prodProps);
+    expect(html).toMatchSnapshot();
+    expect(html).toContain('about-us');
+    expect(html).toContain('hand-spock');
+  });
   it('Renders a Header component in prod profile with no logged in User', () => {
     const html = wrapper(guestProps);
 
