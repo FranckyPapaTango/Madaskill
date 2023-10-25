@@ -17,6 +17,8 @@ import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import ErrorBoundary from 'app/shared/error/error-boundary';
 import { AUTHORITIES } from 'app/config/constants';
 import AppRoutes from 'app/routes';
+import { faFacebook, faTwitter, faInstagram, faSnapchat, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const baseHref = document.querySelector('base').getAttribute('href').replace(/\/$/, '');
 
@@ -58,6 +60,13 @@ export const App = () => {
           </Card>
           <Footer />
         </div>
+      </div>
+      <div>
+        <FontAwesomeIcon icon={faFacebook} />
+        <FontAwesomeIcon icon={faTwitter} />
+        <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon icon={faSnapchat} />
+        <FontAwesomeIcon icon={faLinkedin} />
       </div>
     </BrowserRouter>
   );
