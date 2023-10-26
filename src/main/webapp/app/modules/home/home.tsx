@@ -1,14 +1,13 @@
 import './home.scss';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Translate } from 'react-jhipster';
 import { Row, Col, Alert } from 'reactstrap';
-
 import { useAppSelector } from 'app/config/store';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
+  const marqueeText = 'Votre texte défilant ici'; // Remplacez par le texte que vous souhaitez faire défiler
 
   return (
     <Row>
@@ -16,6 +15,7 @@ export const Home = () => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
+        <div className="marquee">{marqueeText}</div>
         <h2>
           <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
         </h2>

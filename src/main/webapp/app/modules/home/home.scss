@@ -8,3 +8,18 @@ Main page styles
   background: url('../../../content/images/Madagascar-Satellite-Map-378x550.png') no-repeat center top;
   background-size: contain;
 }
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}

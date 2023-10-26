@@ -1,4 +1,4 @@
-import './about-us.css';
+import './about-us.scss';
 
 import React from 'react';
 import { Translate } from 'react-jhipster';

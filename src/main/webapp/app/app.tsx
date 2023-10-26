@@ -61,13 +61,13 @@ export const App = () => {
           <Footer />
         </div>
       </div>
-      <div>
+      {/* <div>
         <FontAwesomeIcon icon={faFacebook} />
         <FontAwesomeIcon icon={faTwitter} />
         <FontAwesomeIcon icon={faInstagram} />
         <FontAwesomeIcon icon={faSnapchat} />
         <FontAwesomeIcon icon={faLinkedin} />
-      </div>
+      </div> */}
     </BrowserRouter>
   );
 };

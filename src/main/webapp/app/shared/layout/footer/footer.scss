@@ -1,3 +1,62 @@
-.footer {
+/* .footer {
   height: 50px;
+} */
+.social-icon-container {
+  margin-right: 36px; /* Ajoutez la marge désirée entre les icônes */
+}
+
+/* Footer.css */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+}
+
+.text-blocks {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de s'enrouler à l'écran étroit */
+  justify-content: space-around;
+  width: 100%;
+  // max-width: 800px;
+}
+
+.text-block {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  margin-bottom: 10px; /* Ajoute un espace entre les blocs de texte */
+}
+
+.social-icons {
+  display: flex;
+  //justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Style des liens */
+.social-icon {
+  font-size: 48px;
+  color: #007bff;
+  transition: color 0.2s;
+  margin-right: 36px; /* Tripler l'espace entre les icônes */
+}
+
+.social-icon:last-child {
+  margin-right: 0; /* Supprimer la marge à droite de la dernière icône */
+}
+
+.social-icon:hover {
+  color: #0056b3;
+}
+
+/* Media Query pour les petits écrans (smartphones) */
+@media screen and (max-width: 768px) {
+  .text-blocks {
+    display: inline;
+    // width: 100%; /* Les blocs de texte occuperont 100% de largeur sur les petits écrans */
+  }
 }
