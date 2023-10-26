@@ -1,4 +1,5 @@
 import AboutUs from 'app/modules/about-us/about-us';
+import VentesEnLigne from 'app/modules/ventes-en-ligne/ventes-en-ligne';
 import React from 'react';
 import { Route, useLocation } from 'react-router-dom';
 import Loadable from 'react-loadable';
@@ -38,9 +39,11 @@ const AppRoutes = () => {
     <div className="view-routes">
       <ErrorBoundaryRoutes>
         <Route index element={<Home />} />
+        <Route path="/ventes-en-ligne" element={<VentesEnLigne />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
+
         <Route path="account">
           <Route
             path="*"
@@ -50,13 +53,16 @@ const AppRoutes = () => {
               </PrivateRoute>
             }
           />
+
           <Route path="register" element={<Register />} />
           <Route path="activate" element={<Activate />} />
+
           <Route path="reset">
             <Route path="request" element={<PasswordResetInit />} />
             <Route path="finish" element={<PasswordResetFinish />} />
           </Route>
         </Route>
+
         <Route
           path="admin/*"
           element={
@@ -65,6 +71,7 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+
         <Route
           path="*"
           element={
@@ -73,6 +80,7 @@ const AppRoutes = () => {
             </PrivateRoute>
           }
         />
+
         <Route path="*" element={<PageNotFound />} />
       </ErrorBoundaryRoutes>
     </div>

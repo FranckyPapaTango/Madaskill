@@ -1,0 +1,23 @@
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px; /* Espace entre les produits */
+}
+
+.product-card {
+  background-color: #f5f5f5; /* Couleur de fond gris clair */
+  border: 1px solid #e0e0e0; /* Bordure légère */
+  padding: 10px;
+  border-radius: 6.28px; /* Ajoutez cette propriété pour des coins arrondis */
+}
+
+/* Style pour la couleur de fond jaune */
+.product-card:hover {
+  background-color: rgb(181, 235, 230);
+}
+
+@media screen and (max-width: 768px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
