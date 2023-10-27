@@ -14,6 +14,8 @@ import { IApplicationUser } from 'app/shared/model/application-user.model';
 import { getEntities as getApplicationUsers } from 'app/entities/application-user/application-user.reducer';
 import { IProduct } from 'app/shared/model/product.model';
 import { getEntity, updateEntity, createEntity, reset } from './product.reducer';
+import Dropzone from 'react-dropzone';
+import './product-update.scss';
 
 export const ProductUpdate = () => {
   const dispatch = useAppDispatch();
@@ -29,6 +31,16 @@ export const ProductUpdate = () => {
   const loading = useAppSelector(state => state.product.loading);
   const updating = useAppSelector(state => state.product.updating);
   const updateSuccess = useAppSelector(state => state.product.updateSuccess);
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageName, setSelectedImageName] = useState('');
+  const handleImageDrop = acceptedFiles => {
+    if (acceptedFiles && acceptedFiles.length > 0) {
+      const image = acceptedFiles[0];
+      setSelectedImage(image);
+      setSelectedImageName(image.name);
+    }
+  };
 
   const handleClose = () => {
     navigate('/product' + location.search);
@@ -191,12 +203,29 @@ export const ProductUpdate = () => {
                   required: { value: true, message: translate('entity.validation.required') },
                 }}
               />
+              <Row>
+                <Col md="12">
+                  <Dropzone onDrop={handleImageDrop} accept="image/*">
+                    {({ getRootProps, getInputProps }) => (
+                      <div {...getRootProps()} className="dropzone">
+                        <input {...getInputProps()} />
+                        {selectedImage ? (
+                          <img src={URL.createObjectURL(selectedImage)} alt="Thumbnail" />
+                        ) : (
+                          <p>Glissez et déposez une image ici, ou cliquez pour sélectionner une image.</p>
+                        )}
+                      </div>
+                    )}
+                  </Dropzone>
+                </Col>
+              </Row>
               <ValidatedField
                 label={translate('madaskillApp.product.linkToGenericPhotoFile')}
                 id="product-linkToGenericPhotoFile"
                 name="linkToGenericPhotoFile"
                 data-cy="linkToGenericPhotoFile"
                 type="text"
+                value={selectedImageName} // Utilisez le nom de fichier sélectionné ici
               />
               <ValidatedField
                 label={translate('madaskillApp.product.availableSizes')}

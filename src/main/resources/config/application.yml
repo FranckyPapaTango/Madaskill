@@ -24,6 +24,9 @@ springdoc:
   api-docs:
     enabled: false
 ---
+file:
+  base-path: src/main/webapp/content/productsImages
+---
 eureka:
   client:
     enabled: true

@@ -86,6 +86,7 @@ public class SecurityConfiguration {
             .antMatchers("/api/account/reset-password/finish").permitAll()
             .antMatchers("/api/admin/**").hasAuthority(AuthoritiesConstants.ADMIN)
             .antMatchers("/api/products").permitAll() // Accès libre à /api/products
+            .antMatchers("/api/upload-image").permitAll() // Accès libre à /api/upload-image
             .antMatchers("/api/**").authenticated()    // Authentification requise pour les autres URLs sous /api/
             .antMatchers("/websocket/**").authenticated()
             .antMatchers("/management/health").permitAll()
