@@ -8,12 +8,21 @@
   background-color: #f5f5f5; /* Couleur de fond gris clair */
   border: 1px solid #e0e0e0; /* Bordure légère */
   padding: 10px;
-  border-radius: 6.28px; /* Ajoutez cette propriété pour des coins arrondis */
-}
+  border-radius: 6.28px; /* Coins arrondis */
 
-/* Style pour la couleur de fond jaune */
-.product-card:hover {
-  background-color: rgb(181, 235, 230);
+  /* Style pour la couleur de fond jaune */
+  &:hover {
+    background-color: rgb(181, 235, 230);
+  }
+
+  img {
+    width: 100%; /* La largeur de l'image remplit le conteneur */
+    height: auto; /* La hauteur est ajustée proportionnellement */
+  }
+
+  p {
+    margin: 0; /* Supprime la marge autour du texte */
+  }
 }
 
 @media screen and (max-width: 768px) {
