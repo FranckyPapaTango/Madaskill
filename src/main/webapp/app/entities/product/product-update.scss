@@ -30,3 +30,34 @@
   margin-top: 10px;
   padding: 5px;
 }
+
+/* Dropzone & co ***************************************************** */
+/* Style pour la zone de dépôt d'image */
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Style pour l'image miniature */
+.dropzone img {
+  max-width: 200%;
+  max-height: 200px; /* Ajustez la hauteur maximale selon vos besoins */
+  margin-top: 10px;
+}
+
+/* Style pour le texte d'information */
+.dropzone p {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Style pour le champ de texte "Link To Generic Photo File" */
+#product-linkToGenericPhotoFile {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+}

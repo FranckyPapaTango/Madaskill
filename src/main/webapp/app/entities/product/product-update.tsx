@@ -16,10 +16,11 @@ import { IProduct } from 'app/shared/model/product.model';
 import { getEntity, updateEntity, createEntity, reset } from './product.reducer';
 import Dropzone from 'react-dropzone';
 import './product-update.scss';
+import axios from 'axios';
 
 export const ProductUpdate = () => {
+  const [selectedImageName, setSelectedImageName] = useState(''); // Déclarez setSelectedImageName
   const dispatch = useAppDispatch();
-
   const navigate = useNavigate();
 
   const { id } = useParams<'id'>();
@@ -31,16 +32,6 @@ export const ProductUpdate = () => {
   const loading = useAppSelector(state => state.product.loading);
   const updating = useAppSelector(state => state.product.updating);
   const updateSuccess = useAppSelector(state => state.product.updateSuccess);
-
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedImageName, setSelectedImageName] = useState('');
-  const handleImageDrop = acceptedFiles => {
-    if (acceptedFiles && acceptedFiles.length > 0) {
-      const image = acceptedFiles[0];
-      setSelectedImage(image);
-      setSelectedImageName(image.name);
-    }
-  };
 
   const handleClose = () => {
     navigate('/product' + location.search);
@@ -63,17 +54,55 @@ export const ProductUpdate = () => {
     }
   }, [updateSuccess]);
 
-  const saveEntity = values => {
-    const entity = {
-      ...productEntity,
-      ...values,
-      user: applicationUsers.find(it => it.id.toString() === values.user.toString()),
-    };
+  const saveEntity = async values => {
+    try {
+      if (fileInput) {
+        const formData = new FormData();
+        formData.append('file', fileInput);
 
-    if (isNew) {
-      dispatch(createEntity(entity));
-    } else {
-      dispatch(updateEntity(entity));
+        try {
+          const response = await axios.post('/api/upload-image', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          });
+
+          // Vous pouvez gérer la réponse ici, par exemple, enregistrez l'URL de l'image dans votre base de données.
+          console.log('Image uploaded:', response.data);
+          // Réinitialisez le champ d'entrée de fichier après l'envoi
+          setFileInput(null);
+        } catch (error) {
+          console.error('Error uploading image:', error);
+          // Gérez les erreurs de téléchargement ici.
+        }
+      }
+      const entity = {
+        ...productEntity,
+        ...values,
+        user: applicationUsers.find(it => it.id.toString() === values.user.toString()),
+      };
+
+      if (isNew) {
+        dispatch(createEntity(entity));
+      } else {
+        dispatch(updateEntity(entity));
+      }
+    } catch (error) {
+      console.error('Error saving entity:', error);
+      // Gérez les erreurs de téléchargement ici.
+    }
+  };
+
+  const [fileInput, setFileInput] = useState(null);
+
+  const handleFileChange = acceptedFiles => {
+    // Vous pouvez gérer les fichiers acceptés ici. Par exemple, vous pouvez afficher l'image ou effectuer d'autres opérations.
+    const selectedFile = acceptedFiles[0];
+    setFileInput(selectedFile);
+
+    if (selectedFile) {
+      const fileName = selectedFile.name;
+      setSelectedImageName(fileName);
     }
   };
 
@@ -205,27 +234,41 @@ export const ProductUpdate = () => {
               />
               <Row>
                 <Col md="12">
-                  <Dropzone onDrop={handleImageDrop} accept="image/*">
+                  <Dropzone onDrop={handleFileChange} accept="image/*" multiple={false}>
                     {({ getRootProps, getInputProps }) => (
                       <div {...getRootProps()} className="dropzone">
                         <input {...getInputProps()} />
-                        {selectedImage ? (
-                          <img src={URL.createObjectURL(selectedImage)} alt="Thumbnail" />
-                        ) : (
-                          <p>Glissez et déposez une image ici, ou cliquez pour sélectionner une image.</p>
-                        )}
+                        <p>Glissez et déposez un fichier image ou cliquez pour sélectionner.</p>
                       </div>
                     )}
                   </Dropzone>
                 </Col>
               </Row>
+              <Row>
+                <Col md="12" className="dropzone">
+                  {fileInput && fileInput instanceof Blob && (
+                    <img src={URL.createObjectURL(fileInput)} alt="Selected Image" className="selected-image" />
+                  )}
+                </Col>
+              </Row>
+              {/* <Row>
+  <Col md="12" className='dropzone'>
+    {selectedImageName && (
+      <img
+        src={URL.createObjectURL(selectedFile)}
+        alt="Selected Image"
+        className="selected-image"
+      />
+    )}
+  </Col>
+</Row> */}
               <ValidatedField
                 label={translate('madaskillApp.product.linkToGenericPhotoFile')}
                 id="product-linkToGenericPhotoFile"
                 name="linkToGenericPhotoFile"
                 data-cy="linkToGenericPhotoFile"
                 type="text"
-                value={selectedImageName} // Utilisez le nom de fichier sélectionné ici
+                value={'../../../content/productsImages/' + selectedImageName} // Utilisez le nom de fichier sélectionné ici
               />
               <ValidatedField
                 label={translate('madaskillApp.product.availableSizes')}
