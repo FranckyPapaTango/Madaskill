@@ -56,26 +56,6 @@ export const ProductUpdate = () => {
 
   const saveEntity = async values => {
     try {
-      if (fileInput) {
-        const formData = new FormData();
-        formData.append('file', fileInput);
-
-        try {
-          const response = await axios.post('/api/upload-image', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          });
-
-          // Vous pouvez gérer la réponse ici, par exemple, enregistrez l'URL de l'image dans votre base de données.
-          console.log('Image uploaded:', response.data);
-          // Réinitialisez le champ d'entrée de fichier après l'envoi
-          setFileInput(null);
-        } catch (error) {
-          console.error('Error uploading image:', error);
-          // Gérez les erreurs de téléchargement ici.
-        }
-      }
       const entity = {
         ...productEntity,
         ...values,
@@ -83,6 +63,26 @@ export const ProductUpdate = () => {
       };
 
       if (isNew) {
+        if (fileInput) {
+          const formData = new FormData();
+          formData.append('file', fileInput);
+
+          try {
+            const response = await axios.post('/api/upload-image', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+
+            // Vous pouvez gérer la réponse ici, par exemple, enregistrez l'URL de l'image dans votre base de données.
+            console.log('Image uploaded:', response.data);
+            // Réinitialisez le champ d'entrée de fichier après l'envoi
+            setFileInput(null);
+          } catch (error) {
+            console.error('Error uploading image:', error);
+            // Gérez les erreurs de téléchargement ici.
+          }
+        }
         dispatch(createEntity(entity));
       } else {
         dispatch(updateEntity(entity));
