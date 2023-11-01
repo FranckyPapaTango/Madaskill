@@ -9,7 +9,8 @@ const ProductList: React.FC = () => {
   useEffect(() => {
     // Appel à l'API pour récupérer les produits
     axios
-      .get('/api/products') // Remplacez par l'URL de votre API
+      // .get('/api/products') // Remplacez par l'URL de votre API
+      .get('/api/productsall') // Remplacez par l'URL de votre API
       .then(response => {
         setProducts(response.data); // Met à jour le state avec les données des produits
       })

@@ -161,6 +161,13 @@ public class ProductResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
+    @GetMapping("/productsall")
+    public ResponseEntity<List<Product>> getAllProducts() {
+        log.debug("REST request to get all Products");
+        List<Product> products = productService.findAllwp();
+        return ResponseEntity.ok(products);
+    }
+
     /**
      * {@code GET  /products/:id} : get the "id" product.
      *

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { getEntity, deleteEntity } from './product.reducer';
+import axios from 'axios';
 
 export const ProductDeleteDialog = () => {
   const dispatch = useAppDispatch();
@@ -36,7 +37,23 @@ export const ProductDeleteDialog = () => {
   }, [updateSuccess]);
 
   const confirmDelete = () => {
+    if (productEntity.linkToGenericPhotoFile) {
+      deleteImage(productEntity.linkToGenericPhotoFile);
+    }
     dispatch(deleteEntity(productEntity.id));
+  };
+
+  const deleteImage = imageName => {
+    axios
+      .delete(`/happy/delete-image/${imageName.replace('../../../content/productsImages/', '')}`)
+      .then(response => {
+        // Gérez la réponse de la suppression de l'image ici
+        console.log(response.data);
+      })
+      .catch(error => {
+        // Gérez les erreurs de suppression de l'image ici
+        console.error(error);
+      });
   };
 
   return (

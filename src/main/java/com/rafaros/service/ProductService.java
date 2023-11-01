@@ -62,4 +62,10 @@ public interface ProductService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * Get all Products (without pagination)
+     * @return the list of entities (without pagination)
+     */
+    List<Product> findAllwp();
 }

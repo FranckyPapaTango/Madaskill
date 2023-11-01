@@ -4,15 +4,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/happy")
 public class UploadResource {
 
     @Value("${file.base-path}")
@@ -26,7 +28,7 @@ public class UploadResource {
             Files.copy(file.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
             return ResponseEntity.ok("../../../content/productsImages/" + originalFilename);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error uploading image.  TRACE is : " + e.toString());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error uploading image.  TRACE is : " + e);
         }
     }
 
@@ -38,14 +40,25 @@ public class UploadResource {
 
             // Vérifiez si le fichier existe, s'il n'existe pas, vous pouvez renvoyer une réponse d'erreur appropriée.
             if (Files.exists(imagePath)) {
-                // Effectuez la mise à jour de l'image
-                Files.copy(file.getInputStream(), imagePath, StandardCopyOption.REPLACE_EXISTING);
-                return ResponseEntity.ok("../../../content/productsImages/" + imageName);
+                // Obtenez le nom du nouveau fichier
+                // String newImageName = UUID.randomUUID() + "." + StringUtils.getFilenameExtension(file.getOriginalFilename());
+                String originalFilename = file.getOriginalFilename();
+                Path newImagePath = Paths.get(storagePath).resolve(originalFilename);
+
+                // Effectuez la mise à jour de l'image en renommant le fichier
+                // Path newImagePath = Paths.get(storagePath).resolve(newImageName);
+                Files.copy(file.getInputStream(), newImagePath, StandardCopyOption.REPLACE_EXISTING);
+
+                // Supprimez l'ancien fichier
+                Files.delete(imagePath);
+
+                // Retournez le chemin du nouveau fichier
+                return ResponseEntity.ok("../../../content/productsImages/" + originalFilename);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Image not found");
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error updating image. TRACE is : " + e.toString());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error updating image. TRACE is : " + e);
         }
     }
 
@@ -63,7 +76,7 @@ public class UploadResource {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Image not found");
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting image. TRACE is: " + e.toString());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting image. TRACE is: " + e);
         }
     }
 }

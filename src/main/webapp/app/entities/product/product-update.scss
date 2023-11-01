@@ -42,6 +42,16 @@
   cursor: pointer;
 }
 
+.imgToReplace {
+  text-align: center;
+}
+.imgToReplace img {
+  text-align: center;
+  max-width: 300%;
+  max-height: 300px; /* Ajustez la hauteur maximale selon vos besoins */
+  margin-top: 10px;
+}
+
 /* Style pour l'image miniature */
 .dropzone img {
   max-width: 200%;

@@ -68,7 +68,7 @@ export const ProductUpdate = () => {
           formData.append('file', fileInput);
 
           try {
-            const response = await axios.post('/api/upload-image', formData, {
+            const response = await axios.post('/happy/upload-image', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
@@ -85,6 +85,30 @@ export const ProductUpdate = () => {
         }
         dispatch(createEntity(entity));
       } else {
+        if (fileInput) {
+          const formData = new FormData();
+          formData.append('file', fileInput);
+          //  const imageName = productEntity.linkToGenericPhotoFile;//.replace('../../../content/productsImages/', '');
+          try {
+            const response = await axios.put(
+              `/happy/update-image/${productEntity.linkToGenericPhotoFile.replace('../../../content/productsImages/', '')}`,
+              formData,
+              {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              }
+            );
+
+            // Vous pouvez gérer la réponse ici, par exemple, enregistrez l'URL de l'image dans votre base de données.
+            console.log('Image updated:', response.data);
+            // Réinitialisez le champ d'entrée de fichier après l'envoi
+            setFileInput(null);
+          } catch (error) {
+            console.error('Error updating image:', error);
+            // Gérez les erreurs de téléchargement ici.
+          }
+        }
         dispatch(updateEntity(entity));
       }
     } catch (error) {
@@ -94,7 +118,6 @@ export const ProductUpdate = () => {
   };
 
   const [fileInput, setFileInput] = useState(null);
-
   const handleFileChange = acceptedFiles => {
     // Vous pouvez gérer les fichiers acceptés ici. Par exemple, vous pouvez afficher l'image ou effectuer d'autres opérations.
     const selectedFile = acceptedFiles[0];
@@ -250,26 +273,34 @@ export const ProductUpdate = () => {
                     <img src={URL.createObjectURL(fileInput)} alt="Selected Image" className="selected-image" />
                   )}
                 </Col>
+                <br />
+                <Col md="12" className="imgToReplace">
+                  {!isNew && <img src={productEntity.linkToGenericPhotoFile} alt="Selected Image" className="selected-image" />}
+                  {!isNew && (
+                    <div>(Valeur à copier coller dans le champ suivant) = {'../../../content/productsImages/' + selectedImageName}</div>
+                  )}
+                </Col>
               </Row>
-              {/* <Row>
-  <Col md="12" className='dropzone'>
-    {selectedImageName && (
-      <img
-        src={URL.createObjectURL(selectedFile)}
-        alt="Selected Image"
-        className="selected-image"
-      />
-    )}
-  </Col>
-</Row> */}
-              <ValidatedField
-                label={translate('madaskillApp.product.linkToGenericPhotoFile')}
-                id="product-linkToGenericPhotoFile"
-                name="linkToGenericPhotoFile"
-                data-cy="linkToGenericPhotoFile"
-                type="text"
-                value={'../../../content/productsImages/' + selectedImageName} // Utilisez le nom de fichier sélectionné ici
-              />
+              {isNew && (
+                <ValidatedField
+                  label={translate('madaskillApp.product.linkToGenericPhotoFile')}
+                  id="product-linkToGenericPhotoFile"
+                  name="linkToGenericPhotoFile"
+                  data-cy="linkToGenericPhotoFile"
+                  type="text"
+                  value={'../../../content/productsImages/' + selectedImageName} // Utilisez le nom de fichier sélectionné ici
+                />
+              )}
+              {!isNew && (
+                <ValidatedField
+                  label={translate('madaskillApp.product.linkToGenericPhotoFile')}
+                  id="product-linkToGenericPhotoFile"
+                  name="linkToGenericPhotoFile"
+                  data-cy="linkToGenericPhotoFile"
+                  type="text"
+                  value={'../../../content/productsImages/' + selectedImageName} // Utilisez le nom de fichier sélectionné ici
+                />
+              )}
               <ValidatedField
                 label={translate('madaskillApp.product.availableSizes')}
                 id="product-availableSizes"

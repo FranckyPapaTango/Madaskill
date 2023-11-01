@@ -152,4 +152,9 @@ public class ProductServiceImpl implements ProductService {
         log.debug("Request to delete Product : {}", id);
         productRepository.deleteById(id);
     }
+
+    @Override
+    public List<Product> findAllwp() {
+        return productRepository.findAll();
+    }
 }
