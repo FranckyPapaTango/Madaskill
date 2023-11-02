@@ -8,6 +8,7 @@ import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntity } from './product.reducer';
+import './product-detail.scss';
 
 export const ProductDetail = () => {
   const dispatch = useAppDispatch();
@@ -128,6 +129,7 @@ export const ProductDetail = () => {
             </span>
           </dt>
           <dd>{productEntity.linkToGenericPhotoFile}</dd>
+          <img src={productEntity.linkToGenericPhotoFile} alt={productEntity.title} />
           <dt>
             <span id="availableSizes">
               <Translate contentKey="madaskillApp.product.availableSizes">Available Sizes</Translate>
