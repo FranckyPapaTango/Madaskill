@@ -1,45 +1,68 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import ProductDetails from './productdetails';
+import { IProduct } from 'app/shared/model/product.model';
 import { Translate } from 'react-jhipster';
 import './product-list.scss';
-import axios from 'axios'; // Exemple d'utilisation d'Axios
 
 const ProductList: React.FC = () => {
-  const [products, setProducts] = useState([]); // State pour stocker les produits
+  const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
 
   useEffect(() => {
-    // Appel à l'API pour récupérer les produits
     axios
-      // .get('/api/products') // Remplacez par l'URL de votre API
-      .get('/api/productsall') // Remplacez par l'URL de votre API
+      .get('/api/productsall')
       .then(response => {
-        setProducts(response.data); // Met à jour le state avec les données des produits
+        setProducts(response.data);
       })
       .catch(error => {
         console.error('Error fetching products:', error);
       });
   }, []);
 
+  const showProductDetails = (product: IProduct) => {
+    setSelectedProduct(product);
+  };
+
+  const goBackToList = () => {
+    setSelectedProduct(null);
+  };
+
   return (
     <div>
-      <h2>Liste des Produits</h2>
-      <div className="product-list">
-        <div className="product-container">
-          {products && products.length > 0 ? (
-            products.map(product => (
-              <div key={product.id} className="product-card">
-                <img src={product.linkToGenericPhotoFile} alt={product.title} />
-                <p>{product.title}</p>
-                <p>{product.description}</p>
-                <p>{product.price} Euros</p>
-              </div>
-            ))
-          ) : (
-            <div className="alert alert-warning">
-              <Translate contentKey="jhipsterMadaskillApp.product.home.notFound">No Products found</Translate>
+      {selectedProduct ? (
+        <ProductDetails product={selectedProduct} onBack={goBackToList} />
+      ) : (
+        <div>
+          <h2>Liste des Produits</h2>
+          <div className="product-list">
+            <div className="product-container">
+              {products && products.length > 0 ? (
+                products.map(product => (
+                  <div
+                    key={product.id}
+                    className="product-card"
+                    onClick={() => showProductDetails(product)} // Ajout du gestionnaire de clic
+                  >
+                    <img src={product.linkToGenericPhotoFile} alt={product.title} />
+                    <p>{product.title}</p>
+                    &nbsp;&nbsp;&nbsp;
+                    <p>{product.description}</p>
+                    <div className="price-and-button">
+                      &nbsp;&nbsp;&nbsp;
+                      {product.price % 1 === 0
+                        ? product.price.toFixed(0).replace(/\d(?=(\d{3})+(?!\d))/g, '$& ') + ' €'
+                        : product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ') + ' €'}
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="alert alert-warning">No Products found</div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

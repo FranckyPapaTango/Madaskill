@@ -17,6 +17,7 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import { sendActivity } from 'app/config/websocket-middleware';
+import ProductDetails from './modules/ventes-en-ligne/productdetails';
 
 const loading = <div>loading ...</div>;
 

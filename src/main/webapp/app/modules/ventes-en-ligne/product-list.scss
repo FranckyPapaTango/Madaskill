@@ -5,6 +5,8 @@
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
   background-color: #f5f5f5; /* Couleur de fond gris clair */
   border: 1px solid #e0e0e0; /* Bordure légère */
   padding: 10px;
@@ -22,6 +24,11 @@
 
   p {
     margin: 0; /* Supprime la marge autour du texte */
+  }
+  .price-and-button {
+    font-weight: bold; /* Texte en gras */
+    font-size: 13px; /* Taille de police personnalisée */
+    margin-top: auto; /* Aligne le bouton en bas de la carte */
   }
 }
 
