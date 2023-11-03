@@ -4,10 +4,18 @@ import ProductDetails from './productdetails';
 import { IProduct } from 'app/shared/model/product.model';
 import { Translate } from 'react-jhipster';
 import './product-list.scss';
+import Cart from './cart';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
+
+  // État pour le panier
+  const [cartItems, setCartItems] = useState([]);
+  // Fonction pour ajouter un produit au panier
+  const addToCart = (product: IProduct) => {
+    setCartItems([...cartItems, { ...product }]);
+  };
 
   useEffect(() => {
     axios
@@ -39,22 +47,28 @@ const ProductList: React.FC = () => {
             <div className="product-container">
               {products && products.length > 0 ? (
                 products.map(product => (
-                  <div
-                    key={product.id}
-                    className="product-card"
-                    onClick={() => showProductDetails(product)} // Ajout du gestionnaire de clic
-                    onTouchStart={() => showProductDetails(product)} // Réagit aux touchés sur smartphones
-                  >
-                    <img src={product.linkToGenericPhotoFile} alt={product.title} />
-                    <p>{product.title}</p>
-                    &nbsp;&nbsp;&nbsp;
-                    <p>{product.description}</p>
-                    <div className="price-and-button">
+                  <div>
+                    <div
+                      key={product.id}
+                      className="product-card"
+                      onClick={() => showProductDetails(product)} // Ajout du gestionnaire de clic
+                      onTouchStart={() => showProductDetails(product)} // Réagit aux touchés sur smartphones
+                    >
+                      <img src={product.linkToGenericPhotoFile} alt={product.title} />
+                      <p>{product.title}</p>
                       &nbsp;&nbsp;&nbsp;
-                      {product.price % 1 === 0
-                        ? product.price.toFixed(0).replace(/\d(?=(\d{3})+(?!\d))/g, '$& ') + ' €'
-                        : product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ') + ' €'}
+                      <p>{product.description}</p>
+                      <div className="price-and-button">
+                        &nbsp;&nbsp;&nbsp;
+                        {product.price % 1 === 0
+                          ? product.price.toFixed(0).replace(/\d(?=(\d{3})+(?!\d))/g, '$& ') + ' €'
+                          : product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ') + ' €'}
+                      </div>
                     </div>
+                    <button className="cartbtn" onClick={() => addToCart(product)}>
+                      Add to Cart
+                    </button>{' '}
+                    {/* Bouton "Add to Cart" */}
                   </div>
                 ))
               ) : (
@@ -64,6 +78,7 @@ const ProductList: React.FC = () => {
           </div>
         </div>
       )}
+      <Cart cartItems={cartItems} /> {/*  Affichez le panier avec les produits ajoutés */}
     </div>
   );
 };

@@ -4,6 +4,10 @@
   gap: 20px; /* Espace entre les produits */
 }
 
+.cartbtn {
+  width: 100%;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -32,6 +36,9 @@
     font-size: 13px; /* Taille de police personnalisée */
     margin-top: auto; /* Aligne le bouton en bas de la carte */
   }
+  /* Définir une hauteur minimale et une largeur fixe pour les éléments .product-card */
+  min-height: 300px; /* Exemple de hauteur minimale */
+  min-width: 200px; /* Exemple de largeur fixe */
 }
 
 @media screen and (max-width: 768px) {
