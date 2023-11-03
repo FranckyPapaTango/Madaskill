@@ -81,7 +81,7 @@ const ProductList: React.FC = () => {
                       </div>
                     </div>
                     <button className="cartbtn" onClick={() => addToCart(product)}>
-                      Add to Cart
+                      Ajouter au Panier
                     </button>{' '}
                     {/* Bouton "Add to Cart" */}
                   </div>
