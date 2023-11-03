@@ -43,6 +43,7 @@ const ProductList: React.FC = () => {
                     key={product.id}
                     className="product-card"
                     onClick={() => showProductDetails(product)} // Ajout du gestionnaire de clic
+                    onTouchStart={() => showProductDetails(product)} // Réagit aux touchés sur smartphones
                   >
                     <img src={product.linkToGenericPhotoFile} alt={product.title} />
                     <p>{product.title}</p>

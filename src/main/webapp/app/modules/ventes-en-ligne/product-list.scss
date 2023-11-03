@@ -12,6 +12,8 @@
   padding: 10px;
   border-radius: 6.28px; /* Coins arrondis */
 
+  cursor: pointer; /* Définir le curseur comme une main */
+
   /* Style pour la couleur de fond jaune */
   &:hover {
     background-color: rgb(181, 235, 230);
