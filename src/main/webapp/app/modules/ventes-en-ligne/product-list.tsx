@@ -14,7 +14,22 @@ const ProductList: React.FC = () => {
   const [cartItems, setCartItems] = useState([]);
   // Fonction pour ajouter un produit au panier
   const addToCart = (product: IProduct) => {
-    setCartItems([...cartItems, { ...product }]);
+    // Vérifiez si le produit existe déjà dans le panier
+    const existingItem = cartItems.find(item => item.id === product.id);
+
+    if (existingItem) {
+      // Le produit existe déjà, mettez à jour la quantité
+      const updatedCartItems = cartItems.map(item => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+      setCartItems(updatedCartItems);
+    } else {
+      // Le produit n'est pas encore dans le panier, ajoutez-le avec une quantité de 1
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
   };
 
   useEffect(() => {
