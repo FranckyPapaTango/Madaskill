@@ -1,1 +1,30 @@
-/* ventes-en-ligne.css */
+/* Style du bouton "Panier" */
+.cart-button {
+  position: fixed;
+  top: 6%; /* Ajustez la position verticale selon vos besoins */
+  right: 20px; /* Ajustez la position horizontale selon vos besoins */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Assurez-vous que le modal s'affiche au-dessus du reste du contenu */
+}

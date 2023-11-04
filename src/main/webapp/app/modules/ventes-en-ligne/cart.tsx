@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import './cart.scss';
 
 interface CartProps {
   cartItems: any[]; // Déclarez le type des cartItems ici
+  onClose: any;
 }
 
-const Cart: React.FC<CartProps> = ({ cartItems }) => {
+const Cart: React.FC<CartProps> = ({ cartItems, onClose }) => {
   const [cart, setCart] = useState([]); // Renommez la variable locale
 
   // Fonction pour ajouter un produit au panier
@@ -32,7 +34,7 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
   };
 
   return (
-    <div>
+    <div className="cart-modal-content">
       <h2>Mon Panier</h2>
       <ul>
         {cartItems.map(item => (
@@ -42,6 +44,7 @@ const Cart: React.FC<CartProps> = ({ cartItems }) => {
         ))}
       </ul>
       <p>Total Global : {calculateTotal()} €</p>
+      <button onClick={onClose}>Fermer</button>
     </div>
   );
 };
