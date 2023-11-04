@@ -19,6 +19,8 @@ import { AUTHORITIES } from 'app/config/constants';
 import { sendActivity } from 'app/config/websocket-middleware';
 import ProductDetails from './modules/ventes-en-ligne/productdetails';
 import Cart from './modules/ventes-en-ligne/cart';
+import { CartProvider } from './modules/ventes-en-ligne/CartContext';
+import { IProduct } from './shared/model/product.model';
 
 const loading = <div>loading ...</div>;
 
@@ -41,7 +43,25 @@ const AppRoutes = () => {
     <div className="view-routes">
       <ErrorBoundaryRoutes>
         <Route index element={<Home />} />
-        <Route path="/ventes-en-ligne" element={<VentesEnLigne />} />
+
+        {/* <Route path="/ventes-en-ligne" element={<VentesEnLigne />} /> */}
+        <Route
+          path="/ventes-en-ligne"
+          element={
+            <CartProvider
+              cartItems={[]}
+              addToCart={function (product: IProduct): void {
+                throw new Error('Function not implemented.');
+              }}
+              resetCart={function (): void {
+                throw new Error('Function not implemented.');
+              }}
+            >
+              <VentesEnLigne />
+            </CartProvider>
+          }
+        />
+
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />

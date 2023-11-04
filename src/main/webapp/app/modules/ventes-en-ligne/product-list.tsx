@@ -6,6 +6,7 @@ import { Translate } from 'react-jhipster';
 import './product-list.scss';
 import Cart from './cart';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from './CartContext';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -29,27 +30,9 @@ const ProductList: React.FC = () => {
   const goBackToList = () => {
     setSelectedProduct(null);
   };
-  // État pour le panier
-  const [cartItems, setCartItems] = useState([]);
-  // Fonction pour ajouter un produit au panier
-  const addToCart = (product: IProduct) => {
-    // Vérifiez si le produit existe déjà dans le panier
-    const existingItem = cartItems.find(item => item.id === product.id);
 
-    if (existingItem) {
-      // Le produit existe déjà, mettez à jour la quantité
-      const updatedCartItems = cartItems.map(item => {
-        if (item.id === product.id) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        return item;
-      });
-      setCartItems(updatedCartItems);
-    } else {
-      // Le produit n'est pas encore dans le panier, ajoutez-le avec une quantité de 1
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
-    }
-  };
+  // Fonction pour ajouter un produit au panier
+  const { addToCart } = useCart(); // Utilisez useCart pour ajouter des produits au panier
 
   return (
     <div>

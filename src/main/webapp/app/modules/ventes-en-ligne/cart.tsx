@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
 import './cart.scss';
 
-interface CartProps {
-  cartItems: any[]; // Déclarez le type des cartItems ici
-  onClose: any;
+interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
 }
 
-const Cart: React.FC<CartProps> = ({ cartItems, onClose }) => {
-  const [cart, setCart] = useState([]); // Renommez la variable locale
+interface CartProps {
+  cartItems: CartItem[];
+  onClose: () => void;
+  updateCartItems: (cartItems: CartItem[]) => void;
+}
 
-  // Fonction pour ajouter un produit au panier
-  const addToCart = product => {
-    const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
-    if (existingItemIndex !== -1) {
-      // Le produit existe déjà dans le panier, mettez à jour la quantité
-      const updatedCartItems = [...cartItems];
-      updatedCartItems[existingItemIndex].quantity++;
-      setCart(updatedCartItems);
-    } else {
-      // Le produit n'est pas encore dans le panier, ajoutez-le
-      setCart([...cartItems, { ...product, quantity: 1 }]);
-    }
-  };
+const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
+  //const [cart, setCart] = useState(cartItems);
 
   // Fonction pour calculer le sous-total d'un produit
   const calculateSubtotal = product => {
