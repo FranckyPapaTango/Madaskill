@@ -12,9 +12,10 @@ interface CartProps {
   cartItems: CartItem[];
   onClose: () => void;
   updateCartItems: (cartItems: CartItem[]) => void;
+  resetCart: () => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
+const Cart: React.FC<CartProps> = ({ cartItems, onClose, resetCart, updateCartItems }) => {
   //const [cart, setCart] = useState(cartItems);
 
   // Fonction pour calculer le sous-total d'un produit
@@ -30,6 +31,7 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
   return (
     <div className="cart-modal-content">
       <h2>Mon Panier</h2>
+      <button onClick={resetCart}>Reset</button>
       <ul>
         {cartItems.map(item => (
           <li key={item.id}>

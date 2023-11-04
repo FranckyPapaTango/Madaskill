@@ -45,22 +45,7 @@ const AppRoutes = () => {
         <Route index element={<Home />} />
 
         {/* <Route path="/ventes-en-ligne" element={<VentesEnLigne />} /> */}
-        <Route
-          path="/ventes-en-ligne"
-          element={
-            <CartProvider
-              cartItems={[]}
-              addToCart={function (product: IProduct): void {
-                throw new Error('Function not implemented.');
-              }}
-              resetCart={function (): void {
-                throw new Error('Function not implemented.');
-              }}
-            >
-              <VentesEnLigne />
-            </CartProvider>
-          }
-        />
+        <Route path="/ventes-en-ligne" element={<VentesEnLigne />} />
 
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="login" element={<Login />} />

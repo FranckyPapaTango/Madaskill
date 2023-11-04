@@ -31,6 +31,9 @@ export const VentesEnLigne = () => {
             updateCartItems={function (cartItems: CartItem[]): void {
               throw new Error('Function not implemented.');
             }}
+            resetCart={function (): void {
+              throw new Error('Function not implemented.');
+            }}
           />
         </div>
       )}
