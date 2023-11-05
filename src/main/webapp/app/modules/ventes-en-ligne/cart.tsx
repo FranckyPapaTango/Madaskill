@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './cart.scss';
+import { useCart } from './CartContext';
 
 interface CartItem {
   id: number;
@@ -15,8 +16,9 @@ interface CartProps {
   resetCart: () => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cartItems, onClose, resetCart, updateCartItems }) => {
+const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
   //const [cart, setCart] = useState(cartItems);
+  const { resetCart } = useCart();
 
   // Fonction pour calculer le sous-total d'un produit
   const calculateSubtotal = product => {
@@ -28,10 +30,15 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, resetCart, updateCartIt
     return cartItems.reduce((total, product) => total + calculateSubtotal(product), 0);
   };
 
+  const handleResetClick = () => {
+    resetCart();
+  };
+
   return (
     <div className="cart-modal-content">
       <h2>Mon Panier</h2>
-      <button onClick={resetCart}>Reset</button>
+      {/* <button onClick={resetCart}>Reset</button> */}
+      <button onClick={handleResetClick}>Réinitialiser le panier</button>
       <ul>
         {cartItems.map(item => (
           <li key={item.id}>
