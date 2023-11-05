@@ -1,5 +1,5 @@
 import './ventes-en-ligne.scss';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
@@ -18,10 +18,18 @@ export const VentesEnLigne = () => {
     setIsCartModalVisible(!isCartModalVisible);
   };
 
+  // Utilisez useEffect pour mettre à jour la quantité totale lorsque les cartItems changent
+  useEffect(() => {
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    // Mettez à jour la quantité totale dans l'état local si vous en avez besoin ailleurs dans le composant
+    // setTotalQuantity(totalQuantity);
+  }, [cartItems]);
+
   return (
     <Row>
       <div className="cart-button" onClick={toggleCartModal}>
         <FaShoppingCart />
+        &nbsp;<span className="qty-cart-symb">{cartItems.reduce((total, item) => total + item.quantity, 0)}</span>
       </div>
       {isCartModalVisible && (
         <div className="cart-modal">
