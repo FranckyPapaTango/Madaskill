@@ -35,6 +35,18 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
     resetCart();
   };
 
+  // Fonction pour formater un nombre avec séparateur de milliers et centimes (si non nuls)
+  const formatNumber = number => {
+    const parts = parseFloat(number).toFixed(2).split('.');
+    const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+    if (parseFloat(parts[1]) === 0) {
+      return integerPart;
+    } else {
+      return integerPart + ',' + parts[1];
+    }
+  };
+
   return (
     <div className="cart-modal-content">
       <h2>Mon Panier</h2>
@@ -45,13 +57,16 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
           <div className="cart-item" key={item.id}>
             <img src={item.linkToGenericPhotoFile} alt={item.title} />
             <div className="cart-item-text">
-              {item.title} - Prix : {item.price} - Quantité : {item.quantity} - Sous-total : {calculateSubtotal(item)} €
+              {item.title} - Prix : {formatNumber(item.price)} - Quantité : {formatNumber(item.quantity)} - Sous-total :{' '}
+              {formatNumber(calculateSubtotal(item))} €
             </div>
           </div>
         ))}
       </div>
-      <p>Total Global : {calculateTotal()} €</p>
-      <button onClick={onClose}>Fermer</button>
+      <div>
+        Total Global :<p className="cart-total"> {formatNumber(calculateTotal())} €</p>
+      </div>
+      <button onClick={onClose}>Retour</button>
     </div>
   );
 };

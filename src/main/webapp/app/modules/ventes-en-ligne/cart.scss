@@ -16,6 +16,7 @@
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  margin: 3%;
 }
 
 .cart-item img {
@@ -25,4 +26,10 @@
 
 .cart-item-text {
   flex-grow: 1;
+}
+
+.cart-total {
+  font-size: 24px; /* Taille de police plus grande */
+  font-weight: bold; /* Texte en gras */
+  color: darkgreen; /* Couleur du texte en vert foncé */
 }
