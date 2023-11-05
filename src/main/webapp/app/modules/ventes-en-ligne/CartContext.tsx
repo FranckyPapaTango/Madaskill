@@ -5,7 +5,7 @@ interface IProduct {
   quantity: number;
   id: number;
   title: string; // Ajoutez la propriété 'title'
-  // Autres propriétés de produit
+  linkToGenericPhotoFile: string; // Autres propriétés de produit
 }
 
 interface ICartContext {
@@ -21,6 +21,7 @@ export interface CartItem extends IProduct {
   product: IProduct; // Référence au produit (IProduct)
   quantity: number; // Quantité de fois que le produit a été ajouté au panier
   subtotal: number; // Sous-total (prix total de la ligne de produit)
+  linkToGenericPhotoFile: string; // Ajoutez l'attribut pour l'image
 }
 
 export const CartProvider: React.FC<ICartContext> = ({ children }) => {
@@ -43,6 +44,7 @@ export const CartProvider: React.FC<ICartContext> = ({ children }) => {
         price: product.price,
         id: product.id,
         title: product.title,
+        linkToGenericPhotoFile: product.linkToGenericPhotoFile, // Ajoutez l'attribut pour l'image
       };
       setCartItems([...cartItems, newCartItem]);
     }

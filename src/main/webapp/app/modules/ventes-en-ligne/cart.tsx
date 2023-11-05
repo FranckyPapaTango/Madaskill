@@ -3,6 +3,7 @@ import './cart.scss';
 import { useCart } from './CartContext';
 
 interface CartItem {
+  linkToGenericPhotoFile: string;
   id: number;
   title: string;
   price: number;
@@ -39,13 +40,16 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
       <h2>Mon Panier</h2>
       {/* <button onClick={resetCart}>Reset</button> */}
       <button onClick={handleResetClick}>Réinitialiser le panier</button>
-      <ul>
+      <div className="cart-item-list-container">
         {cartItems.map(item => (
-          <li key={item.id}>
-            {item.title} - Quantité : {item.quantity} - Sous-total : {calculateSubtotal(item)} €
-          </li>
+          <div className="cart-item" key={item.id}>
+            <img src={item.linkToGenericPhotoFile} alt={item.title} />
+            <div className="cart-item-text">
+              {item.title} - Prix : {item.price} - Quantité : {item.quantity} - Sous-total : {calculateSubtotal(item)} €
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
       <p>Total Global : {calculateTotal()} €</p>
       <button onClick={onClose}>Fermer</button>
     </div>
