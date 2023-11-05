@@ -39,10 +39,10 @@ export const CartProvider: React.FC<ICartContext> = ({ children }) => {
       const newCartItem: CartItem = {
         product,
         quantity: 1,
-        subtotal: product.price,
-        price: 0,
-        id: 0,
-        title: '',
+        subtotal: 0,
+        price: product.price,
+        id: product.id,
+        title: product.title,
       };
       setCartItems([...cartItems, newCartItem]);
     }
