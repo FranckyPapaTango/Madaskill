@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
-interface IProduct {
+export interface IProduct {
   price: number;
   quantity: number;
   id: number;
@@ -12,7 +12,8 @@ interface ICartContext {
   cartItems: IProduct[];
   addToCart: (product: IProduct) => void;
   resetCart: () => void;
-  children?: React.ReactNode; // Propriété enfants optionnelle
+  removeFromCart: (product: IProduct) => void; // Ajoutez la méthode removeFromCart
+  children?: React.ReactNode;
 }
 
 export const CartContext = createContext<ICartContext | undefined>(undefined); // Définissez CartContext comme une exportation nommée
@@ -50,11 +51,29 @@ export const CartProvider: React.FC<ICartContext> = ({ children }) => {
     }
   };
 
+  const removeFromCart = (product: IProduct) => {
+    const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
+
+    if (existingItemIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      const existingItem = updatedCartItems[existingItemIndex];
+
+      if (existingItem.quantity > 1) {
+        existingItem.quantity--;
+        existingItem.subtotal = existingItem.quantity * existingItem.price;
+      } else {
+        updatedCartItems.splice(existingItemIndex, 1);
+      }
+
+      setCartItems(updatedCartItems);
+    }
+  };
+
   const resetCart = () => {
     setCartItems([]);
   };
 
-  return <CartContext.Provider value={{ cartItems, addToCart, resetCart }}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={{ cartItems, addToCart, resetCart, removeFromCart }}>{children}</CartContext.Provider>;
 };
 
 export const useCart = () => {

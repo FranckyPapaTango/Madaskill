@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './cart.scss';
-import { useCart } from './CartContext';
+import { IProduct, useCart } from './CartContext';
 
 interface CartItem {
   linkToGenericPhotoFile: string;
@@ -18,8 +18,7 @@ interface CartProps {
 }
 
 const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
-  //const [cart, setCart] = useState(cartItems);
-  const { resetCart } = useCart();
+  const { resetCart, addToCart, removeFromCart } = useCart();
 
   // Fonction pour calculer le sous-total d'un produit
   const calculateSubtotal = product => {
@@ -47,6 +46,14 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
     }
   };
 
+  const handleIncrement = (product: IProduct) => {
+    addToCart(product); // Ajoute 1 à la quantité du produit
+  };
+
+  const handleDecrement = (product: IProduct) => {
+    removeFromCart(product); // Ajoute 1 à la quantité du produit
+  };
+
   return (
     <div className="cart-modal-content">
       <h2>Mon Panier</h2>
@@ -60,6 +67,9 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
               {item.title} - Prix : {formatNumber(item.price)} - Quantité : {formatNumber(item.quantity)} - Sous-total :{' '}
               {formatNumber(calculateSubtotal(item))} €
             </div>
+            &nbsp;&nbsp;
+            <button onClick={() => handleDecrement(item)}>-</button>
+            <button onClick={() => handleIncrement(item)}>+</button>
           </div>
         ))}
       </div>

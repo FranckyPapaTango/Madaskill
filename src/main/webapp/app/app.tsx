@@ -19,8 +19,7 @@ import { AUTHORITIES } from 'app/config/constants';
 import AppRoutes from 'app/routes';
 import { faFacebook, faTwitter, faInstagram, faSnapchat, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CartProvider } from './modules/ventes-en-ligne/CartContext';
-import { IProduct } from './shared/model/product.model';
+import { CartProvider, IProduct } from './modules/ventes-en-ligne/CartContext';
 
 const baseHref = document.querySelector('base').getAttribute('href').replace(/\/$/, '');
 
@@ -63,6 +62,9 @@ export const App = () => {
                   throw new Error('Function not implemented.');
                 }}
                 resetCart={function (): void {
+                  throw new Error('Function not implemented.');
+                }}
+                removeFromCart={function (product: IProduct): void {
                   throw new Error('Function not implemented.');
                 }}
               >
