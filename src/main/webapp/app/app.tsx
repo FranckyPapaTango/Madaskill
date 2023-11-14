@@ -2,7 +2,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
 import 'app/config/dayjs.ts';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card } from 'reactstrap';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,6 +20,8 @@ import AppRoutes from 'app/routes';
 import { faFacebook, faTwitter, faInstagram, faSnapchat, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CartProvider, IProduct } from './modules/ventes-en-ligne/CartContext';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from './modules/ventes-en-ligne/checkoutForm(past)';
 
 const baseHref = document.querySelector('base').getAttribute('href').replace(/\/$/, '');
 
@@ -39,6 +41,7 @@ export const App = () => {
   const isOpenAPIEnabled = useAppSelector(state => state.applicationProfile.isOpenAPIEnabled);
 
   const paddingTop = '60px';
+
   return (
     <BrowserRouter basename={baseHref}>
       <div className="app-container" style={{ paddingTop }}>
@@ -68,6 +71,7 @@ export const App = () => {
                   throw new Error('Function not implemented.');
                 }}
               >
+                {/*                 <CheckoutForm clientSecret={clientSecret} /> */}
                 <AppRoutes />
               </CartProvider>
             </ErrorBoundary>

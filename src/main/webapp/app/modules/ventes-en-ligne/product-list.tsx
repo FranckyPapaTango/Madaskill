@@ -43,15 +43,14 @@ const ProductList: React.FC = () => {
           <div>
             <h2>Liste des Produits</h2>
             <div className="product-list">
-              <div className="product-container">
-                {products && products.length > 0 ? (
-                  products.map(product => (
-                    <div>
+              {products && products.length > 0 ? (
+                <div className="product-container">
+                  {products.map(product => (
+                    <div key={product.id}>
                       <div
-                        key={product.id}
                         className="product-card"
-                        onClick={() => showProductDetails(product)} // Ajout du gestionnaire de clic
-                        onTouchStart={() => showProductDetails(product)} // Réagit aux touchés sur smartphones
+                        onClick={() => showProductDetails(product)}
+                        onTouchStart={() => showProductDetails(product)}
                       >
                         <img src={product.linkToGenericPhotoFile} alt={product.title} />
                         <p>{product.title}</p>
@@ -69,11 +68,11 @@ const ProductList: React.FC = () => {
                       </button>{' '}
                       {/* Bouton "Add to Cart" */}
                     </div>
-                  ))
-                ) : (
-                  <div className="alert alert-warning">No Products found</div>
-                )}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="alert alert-warning">No Products found</div>
+              )}
             </div>
           </div>
         </>

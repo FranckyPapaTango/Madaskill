@@ -17,10 +17,8 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import { sendActivity } from 'app/config/websocket-middleware';
-import ProductDetails from './modules/ventes-en-ligne/productdetails';
-import Cart from './modules/ventes-en-ligne/cart';
-import { CartProvider } from './modules/ventes-en-ligne/CartContext';
-import { IProduct } from './shared/model/product.model';
+import SuccessPage from './modules/ventes-en-ligne/successPage';
+import CancelPage from './modules/ventes-en-ligne/cancelPage';
 
 const loading = <div>loading ...</div>;
 
@@ -50,6 +48,8 @@ const AppRoutes = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/cancel" element={<CancelPage />} />
 
         <Route path="account">
           <Route

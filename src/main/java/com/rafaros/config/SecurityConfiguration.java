@@ -91,6 +91,7 @@ public class SecurityConfiguration {
 /*            .antMatchers("/happy/upload-image").permitAll() // Accès libre à /api/upload-image
             .antMatchers("/happy/update-image").permitAll() // Accès libre à /api/update-image
             .antMatchers("/happy/delete-image").permitAll() // Accès libre à /api/delete-image*/
+            .antMatchers("/api/payment/**").permitAll() // Accès libre à /stp/payment/ et ses sous-url
             .antMatchers("/api/**").authenticated()    // Authentification requise pour les autres URLs sous /api/
             .antMatchers("/websocket/**").authenticated()
             .antMatchers("/management/health").permitAll()
