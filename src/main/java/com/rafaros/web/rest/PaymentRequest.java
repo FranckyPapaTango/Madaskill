@@ -6,16 +6,6 @@ public class PaymentRequest {
 
     private Integer amount;
 
-    public PaymentIntentCreateParams toPaymentIntentCreateParams() {
-        return PaymentIntentCreateParams
-            .builder()
-            .setAmount((long) amount)
-            .setCurrency("eur")
-            .setPaymentMethod("card")
-            .setConfirmationMethod(PaymentIntentCreateParams.ConfirmationMethod.valueOf("automatic"))
-            .build();
-    }
-
     public Integer getAmount() {
         return amount;
     }
