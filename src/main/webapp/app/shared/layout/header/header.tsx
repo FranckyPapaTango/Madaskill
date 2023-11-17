@@ -11,6 +11,7 @@ import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu } from '../menus';
 import { useAppDispatch } from 'app/config/store';
 import { AboutUs } from './header-components';
 import { VentesEnLigne } from './header-components';
+import { Annonces } from './header-components';
 import { setLocale } from 'app/shared/reducers/locale';
 
 export interface IHeaderProps {
@@ -59,6 +60,7 @@ const Header = (props: IHeaderProps) => {
           <Nav id="header-tabs" className="ms-auto" navbar>
             <Home />
             <VentesEnLigne />
+            <Annonces />
             <AboutUs />
             {props.isAuthenticated && <EntitiesMenu />}
             {props.isAuthenticated && props.isAdmin && (

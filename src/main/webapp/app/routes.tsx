@@ -1,5 +1,6 @@
 import AboutUs from 'app/modules/about-us/about-us';
 import VentesEnLigne from 'app/modules/ventes-en-ligne/ventes-en-ligne';
+import Annonces from 'app/modules/annonces/annonces';
 import React from 'react';
 import { Route, useLocation } from 'react-router-dom';
 import Loadable from 'react-loadable';
@@ -44,6 +45,7 @@ const AppRoutes = () => {
 
         {/* <Route path="/ventes-en-ligne" element={<VentesEnLigne />} /> */}
         <Route path="/ventes-en-ligne" element={<VentesEnLigne />} />
+        <Route path="/annonces" element={<Annonces />} />
 
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="login" element={<Login />} />

@@ -43,6 +43,16 @@ export const VentesEnLigne = props => (
     </NavLink>
   </NavItem>
 );
+export const Annonces = props => (
+  <NavItem>
+    <NavLink tag={Link} to="/annonces" className="d-flex align-items-center">
+      <FontAwesomeIcon icon="heart" />
+      <span>
+        <Translate contentKey="global.menu.annonces">Annonces</Translate>
+      </span>
+    </NavLink>
+  </NavItem>
+);
 export const AboutUs = props => (
   <NavItem>
     <NavLink tag={Link} to="/about-us" className="d-flex align-items-center">

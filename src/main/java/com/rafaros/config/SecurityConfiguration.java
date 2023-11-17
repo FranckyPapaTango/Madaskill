@@ -85,6 +85,8 @@ public class SecurityConfiguration {
             .antMatchers("/api/account/reset-password/init").permitAll()
             .antMatchers("/api/account/reset-password/finish").permitAll()
             .antMatchers("/api/admin/**").hasAuthority(AuthoritiesConstants.ADMIN)
+            .antMatchers("/api/photos/**").permitAll() // Accès libre à /api/photos et ses sous-url
+            .antMatchers("/api/posts/**").permitAll() // Accès libre à /api/posts et ses sous-url
             .antMatchers("/api/products/**").permitAll() // Accès libre à /api/products et ses sous-url
             .antMatchers("/api/productsall").permitAll() // Accès libre à /api/productsall (sans pagination)
             .antMatchers("/happy/**").permitAll() // Accès libre à /happy et ses sous-url
