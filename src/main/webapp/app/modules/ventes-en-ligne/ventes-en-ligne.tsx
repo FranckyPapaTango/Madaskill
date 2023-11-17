@@ -51,9 +51,11 @@ export const VentesEnLigne = () => {
         <h1 className="text-capitalize text-center">
           <Translate contentKey="ventesEnLigne.title">Title</Translate>
         </h1>
-        <h5 className="text-center">
-          <Translate contentKey="ventesEnLigne.subtitle">Subtitle</Translate>
-        </h5>
+        <div className="subtitle">
+          <div className="text-subtitle">
+            <Translate contentKey="ventesEnLigne.subtitle">Subtitle</Translate>
+          </div>
+        </div>
         <hr />
         {/* <p className="text-justify">
       <Translate contentKey="ventesEnLigne.content">Content</Translate>

@@ -1,6 +1,7 @@
 package com.rafaros.repository;
 
 import com.rafaros.domain.Photo;
+import java.util.List;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -9,4 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PhotoRepository extends JpaRepository<Photo, Long> {}
+public interface PhotoRepository extends JpaRepository<Photo, Long> {
+    List<Photo> findByProductId(Long productId);
+}

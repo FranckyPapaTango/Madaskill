@@ -178,4 +178,11 @@ public class PhotoResource {
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
     }
+
+    @GetMapping("/products/{productId}/photos")
+    public ResponseEntity<List<Photo>> getPhotosByProductId(@PathVariable Long productId) {
+        log.debug("REST request to get Photos by Product ID: {}", productId);
+        List<Photo> photos = photoRepository.findByProductId(productId);
+        return ResponseEntity.ok().body(photos);
+    }
 }

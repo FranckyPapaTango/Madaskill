@@ -48,7 +48,7 @@ export const AboutUs = props => (
     <NavLink tag={Link} to="/about-us" className="d-flex align-items-center">
       <FontAwesomeIcon icon="hand-spock" />
       <span>
-        <Translate contentKey="global.menu.aboutUs">About Us</Translate>
+        <Translate contentKey="global.menu.aboutUs">A propos</Translate>
       </span>
     </NavLink>
   </NavItem>

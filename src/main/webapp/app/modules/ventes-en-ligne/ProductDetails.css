@@ -1,0 +1,23 @@
+.product-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; /* ajustez selon votre préférence pour l'espace entre les éléments */
+
+  /* Ajoutez une media query pour les petits écrans */
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr; /* Passe à une seule colonne pour les petits écrans */
+  }
+}
+
+.product-details > div {
+  text-align: center; /* Centre le contenu dans chaque cellule de la grille */
+}
+
+.product-details img {
+  width: 100%; /* Occupe 100% de la largeur du conteneur */
+  height: auto; /* Ajuste automatiquement la hauteur pour conserver les proportions */
+}
+
+.product-details p {
+  margin: 8px 0; /* Ajoutez une marge en haut et en bas pour un espacement agréable */
+}

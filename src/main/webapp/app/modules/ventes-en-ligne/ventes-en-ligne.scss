@@ -28,3 +28,21 @@
   align-items: center;
   z-index: 99999; /* Assurez-vous que le modal s'affiche au-dessus du reste du contenu */
 }
+
+.subtitle {
+  border: 2px solid #e0e0e0; /* Bordure légère */
+  padding: 10px;
+  border-radius: 6.28px; /* Coins arrondis */
+  margin: auto;
+  width: 50%;
+  text-align: left;
+}
+.text-subtitle {
+  font-size: 0.7854em;
+}
+
+@media screen and (max-width: 768px) {
+  .subtitle {
+    width: 100%;
+  }
+}

@@ -40,3 +40,43 @@ INSERT INTO PRODUCT (
 (1004, 'cptrpcl', TRUE, 94512, 57.0, 'Pork pie, Chapeau tropical, en paille rigide', TRUE, 'Soft', TRUE, 'pink Sausages', 'Computers Jamaïque', 'Electronics', 20046, 'http://thierry.fr', 'cptrpcl', 'Chapeau tropical', '../../../content/productsImages/Lambert-porkpie-hat-khaki.webp', 'toutes tailles', 'euros', FALSE, 57.0, 'tropical', 2, 2),
 (1005, 'sctrymh', FALSE, 91355, 625.0, 'Scooter Yamaha, 50 cm3, 75 00 km, couleur gris et bleu clair métallisé', TRUE, 'mint', TRUE, 'exuding copying', 'services a', 'transmitting Account', 18057, 'https://colin.info', 'sctrymh', 'Scooter 50 cm3', '../../../content/productsImages/productsImagesi.imgur.com_LFe1TYX.jpeg', '50 cm3', 'euros', TRUE, 625.0, '50 cm3', 5, 1);
 -- RUNSCRIPT FROM 'C:\Users\rafar\IdeaProjects\Madaskill\src\main\resources\config\liquibase\h2-db-madaskill-jhipster.sql'
+
+INSERT INTO PHOTO (ID, TITLE, LINK_TO_PHOTO_FILE, DESCRIPTION, AUTHOR, OWNER, HEIGHT, WIDTH, TAKEN, UPLOADED, POST_ID, PRODUCT_ID)
+VALUES
+(1, 'ADP Botswana Directeur', '../../../content/productsImages/31g72enCVgL._AC_SL1000_.jpg', 'vu de coté', 'deposit Madagascar Rustic', 'Saint-Bernard compress', 57552, 62683, '2023-08-15 16:34:00', '2023-08-16 10:24:00', null, 1),
+(2, 'Frozen clear-thinking a', '../../../content/productsImages/41yq3GHTMDL._AC_SL1000_.jpg', 'vu de dessus', 'Games eco-centric', 'monitoring Tuna', 40412, 51697, '2023-08-16 08:58:00', '2023-08-16 03:50:00', null, 1),
+(3, 'programming Soudan', '../../../content/productsImages/41iSrjMui6L._AC_SL1000_.jpg', 'vu en biais', 'violet access', 'strategize', 14489, 69106, '2023-08-16 11:55:00', '2023-08-16 09:02:00', null, 1),
+(4, 'Versatile', '../../../content/productsImages/editorialimage (1).webp', 'vus de face', 'bandwidth-monitored', 'Practical', 53251, 89139, '2023-08-15 19:06:00', '2023-08-15 21:30:00', null, 2),
+(5, 'transmitter', '../../../content/productsImages/editorialimage (3).webp', 'vus de dos, en biais', 'proactive Car', 'de Producteur connect', 49190, 72446, '2023-08-15 23:44:00', '2023-08-16 10:12:00', null, 2),
+(6, 'Concrete Soft synthesize', '../../../content/productsImages/editorialimage.webp', 'vus de droite', 'primary', 'Lorraine PNG Madagascar', 92494, 77651, '2023-08-16 12:08:00', '2023-08-16 08:17:00', null, 2),
+(7, 'Managed Steel Account', '../../../content/productsImages/51E+Pq6SjbL._AC_SX679_.jpg', 'vu de côté', 'strategize payment', 'Languedoc-Roussillon Berkshire granular', 28119, 64224, '2023-08-15 21:34:00', '2023-08-16 09:02:00', null, 3),
+(8, 'turquoise Swaziland deposit', '../../../content/productsImages/71duG0php+L._AC_SX679_.jpg', 'vu de haut,', 'interface', 'Car', 52937, 59370, '2023-08-15 16:19:00', '2023-08-16 07:08:00', null, 3),
+(9, 'quantifying b', '../../../content/productsImages/jet-ski-kawasaki-stx-160-de-2023-en-160cv (1).jpg', 'vu de côté', 'integrate', 'Balanced Buckinghamshire', 31504, 84517, '2023-08-16 02:37:00', '2023-08-16 00:01:00', null, 4),
+(10, 'Kenya Specialiste pink', '../../../content/productsImages/ray-ban-leuleu.png', 'vu de face', 'distributed Outdoors', 'Handmade system CSS', 7544, 47368, '2023-08-15 22:20:00', '2023-08-16 12:12:00', null, 5),
+(1001, NULL, '../../../content/productsImages/il_794xN.4019240936_9qgr.webp', 'gros plan supérieur', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 6),
+(1002, NULL, '../../../content/productsImages/il_794xN.4019240954_9gw8.webp', 'mesure comparée', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 6),
+(1003, NULL, '../../../content/productsImages/yamaha-gc22c-grand1.jpg', 'zoom de face', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 7),
+(1004, NULL, '../../../content/productsImages/yamaha-gc22c-large-2-103921.jpg', 'vu de dos', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 7),
+(1005, NULL, '../../../content/productsImages/sac-boetie-louisvuitton-2305-69-LOUIS_VUITTON-vintega-seconde-main-luxe-maroquinerie-occasion_004.webp', 'vu de côté, en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 8),
+(1006, NULL, '../../../content/productsImages/sac-boetie-louisvuitton-2305-69-LOUIS_VUITTON-vintega-seconde-main-luxe-maroquinerie-occasion_005.webp', 'vu de dos', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 8),
+(1007, NULL, '../../../content/productsImages/sac-boetie-louisvuitton-2305-69-LOUIS_VUITTON-vintega-seconde-main-luxe-maroquinerie-occasion_006.webp', 'vu de dessous', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 8),
+(1008, NULL, '../../../content/productsImages/yizyif-mini-jupe-brillant-huileux-sexy-jupe-moulan (2).webp', 'vu de dos', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 9),
+(1009, NULL, '../../../content/productsImages/yizyif-mini-jupe-brillant-huileux-sexy-jupe-moulan (1).webp', 'vu de face', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 9),
+(1010, NULL, '../../../content/productsImages/1152212--mfvo1152212.jpg', 'vu de face', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 10),
+(1011, NULL, '../../../content/productsImages/1152216--mfvo1152216.jpg', 'zoom de face', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 10),
+(1012, NULL, '../../../content/productsImages/1152214--mfvo1152214.jpg', 'vu de dos en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 10),
+(1013, NULL, '../../../content/productsImages/51269-tondeuse-18v-ryobi-3.jpg', 'vu en action', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 11),
+(1014, NULL, '../../../content/productsImages/51269-tondeuse-18v-ryobi-5.jpg', 'vu en action intense', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 11),
+(1015, NULL, '../../../content/productsImages/51269-tondeuse-18v-ryobi-4.jpg', '(idem)', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 11),
+(1016, NULL, '../../../content/productsImages/51269-tondeuse-18v-ryobi-2.jpg', NULL, NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 11),
+(1017, NULL, '../../../content/productsImages/16rp4qa6r1pbaw1z3r3m3us3uz67m767snatahym8.jpg', 'vu du dos', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 12),
+(1018, NULL, '../../../content/productsImages/16vfmtofqutce086gpm4390kp9qycah4u2ipm0ry8.jpg', 'vu de côté en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 12),
+(1019, NULL, '../../../content/productsImages/1k7o9nkly2d4o9nzvo8atgefn8oh3ftx47uwm03gg.jpg', 'vu de face, en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 12),
+(1020, NULL, '../../../content/productsImages/product-image-1016975250_600x.webp', 'vu des dimensions', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 13),
+(1021, NULL, '../../../content/productsImages/product-image-1016975253_600x.webp', 'vu de face', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 13),
+(1022, NULL, '../../../content/productsImages/chapeau-trilby-tropical-paille-traclet (1).jpg', 'vu de gauche, en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 14),
+(1023, NULL, '../../../content/productsImages/chapeau-trilby-tropical-paille-traclet (3).jpg', 'vu de dos', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 14),
+(1024, NULL, '../../../content/productsImages/chapeau-trilby-tropical-paille-traclet (2).jpg', 'vu de droite, en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 14),
+(1025, NULL, '../../../content/productsImages/ff048fff975a148f2680cba55369810e7bfa3134.jpg', 'vu de face, en biais', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 15),
+(1026, NULL, '../../../content/productsImages/c87807f6311234da837876355b89d9a7dec487e1.jpg', 'vu de l''arrière, vu de dos', NULL, NULL, NULL, NULL, '2023-09-18 22:00:00', '2023-09-18 22:00:00', NULL, 15);
+-- RUNSCRIPT FROM 'C:\Users\rafar\IdeaProjects\Madaskill\src\main\resources\config\liquibase\h2-db-madaskill-jhipster.sql'
