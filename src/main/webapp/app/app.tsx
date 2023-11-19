@@ -21,7 +21,6 @@ import { faFacebook, faTwitter, faInstagram, faSnapchat, faLinkedin } from '@for
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CartProvider, IProduct } from './modules/ventes-en-ligne/CartContext';
 import { Elements } from '@stripe/react-stripe-js';
-import CheckoutForm from './modules/ventes-en-ligne/checkoutForm(past)';
 
 const baseHref = document.querySelector('base').getAttribute('href').replace(/\/$/, '');
 
