@@ -35,6 +35,9 @@
       "LineItem"
     ],
     "entitySuffix": "",
+    "herokuAppName": "madaskill",
+    "herokuDeployType": "git",
+    "herokuJavaVersion": "11",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "7.9.3",
     "jwtSecretKey": "NGE4NjYwNWRmY2FjYzQ3NTczOWVlZmE0NGJkMGM5OTI2MzY2NTJjN2JlODUzNTczZjEwMDk3ZTRmODE4MjA2M2Q5OGRjZTk5NmJmNDc4MjdlMmE1ZDRiNTBiY2RiNDgyYmEzZWIxYjZhYjkyNjQ1M2RjOGIxYThhOTExYjE4NTc=",
