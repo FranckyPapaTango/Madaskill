@@ -6,6 +6,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
@@ -65,7 +66,18 @@ public class MadaskillApp {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
+        int defaultPort = 3000;
+        String portStr = System.getenv("PORT");
+
+        int port;
+        if (portStr != null && !portStr.isEmpty()) {
+            port = Integer.parseInt(portStr);
+        } else {
+            port = defaultPort;
+        }
+
         SpringApplication app = new SpringApplication(MadaskillApp.class);
+        app.setDefaultProperties(Collections.singletonMap("server.port", port));
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);
