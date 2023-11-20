@@ -1,7 +1,7 @@
 import './cart.scss';
 import { IProduct, useCart } from './CartContext';
 import { Elements } from '@stripe/react-stripe-js';
-import CheckoutForm from './CheckoutForm'; // Ajustez l'import
+import CheckoutForm from './checkoutForm'; // ajustez la casse selon le nom de fichier réel
 
 import { loadStripe } from '@stripe/stripe-js';
 import { useState } from 'react';
