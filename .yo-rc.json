@@ -50,7 +50,7 @@
     "otherModules": [],
     "packageName": "com.rafaros",
     "pages": [],
-    "prodDatabaseType": "postgresql",
+    "prodDatabaseType": "h2Disk",
     "reactive": false,
     "searchEngine": false,
     "serverPort": "8080",
