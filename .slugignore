@@ -1,5 +1,5 @@
 .git
-/src/main/webapp/content
+/target
 .husky
 .vscode
 .idea
