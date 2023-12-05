@@ -1150,7 +1150,7 @@
         <profile>
             <id>prod</id>
             <dependencies>
-                <dependency>
+<!--                <dependency>
                     <groupId>org.testcontainers</groupId>
                     <artifactId>postgresql</artifactId>
                     <scope>test</scope>
@@ -1158,7 +1158,7 @@
                 <dependency>
                     <groupId>org.postgresql</groupId>
                     <artifactId>postgresql</artifactId>
-                </dependency>
+                </dependency>-->
             </dependencies>
             <build>
                 <pluginManagement>
@@ -1500,7 +1500,7 @@
             </dependencyManagement>
             <build>
                 <plugins>
-                    <plugin>
+<!--                    <plugin>
                         <groupId>org.liquibase</groupId>
                         <artifactId>liquibase-maven-plugin</artifactId>
                         <configuration combine.self="override">
@@ -1516,7 +1516,7 @@
                             <logging>debug</logging>
                             <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                         </configuration>
-                    </plugin>
+                    </plugin>-->
                     <plugin>
                         <artifactId>maven-clean-plugin</artifactId>
                         <version>${maven-clean-plugin.version}</version>
