@@ -1,5 +1,5 @@
 .git
-src\main\webapp\content
+/src/main/webapp/content
 .husky
 .vscode
 .idea
