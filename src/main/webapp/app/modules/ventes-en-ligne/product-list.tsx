@@ -5,7 +5,6 @@ import { IProduct } from 'app/shared/model/product.model';
 import { Translate } from 'react-jhipster';
 import './product-list.scss';
 import Cart from './cart';
-import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from './CartContext';
 
 const ProductList: React.FC = () => {
