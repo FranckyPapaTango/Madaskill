@@ -10,13 +10,14 @@ export interface IMenuItem {
   to: string;
   id?: string;
   'data-cy'?: string;
+  onClick?: () => void; // Ajoutez cette ligne
 }
 
 const MenuItem = (props: IMenuItem) => {
-  const { to, icon, id, children } = props;
+  const { to, icon, id, children, onClick } = props;
 
   return (
-    <DropdownItem tag={Link} to={to} id={id} data-cy={props['data-cy']}>
+    <DropdownItem tag={Link} to={to} id={id} data-cy={props['data-cy']} onClick={onClick}>
       <FontAwesomeIcon icon={icon} fixedWidth /> {children}
     </DropdownItem>
   );

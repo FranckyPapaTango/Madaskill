@@ -46,6 +46,10 @@ const Header = (props: IHeaderProps) => {
     ) : null;
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const handleMenuItemClick = () => {
+    // Appeler toggleMenu pour fermer le menu burger
+    toggleMenu();
+  };
 
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
@@ -58,16 +62,16 @@ const Header = (props: IHeaderProps) => {
         <Brand />
         <Collapse isOpen={menuOpen} navbar>
           <Nav id="header-tabs" className="ms-auto" navbar>
-            <Home />
-            <VentesEnLigne />
-            <Annonces />
-            <AboutUs />
-            {props.isAuthenticated && <EntitiesMenu />}
+            <Home onClick={handleMenuItemClick} />
+            <VentesEnLigne onClick={handleMenuItemClick} />
+            <Annonces onClick={handleMenuItemClick} />
+            <AboutUs onClick={handleMenuItemClick} />
+            {props.isAuthenticated && <EntitiesMenu onClick={handleMenuItemClick} />}
             {props.isAuthenticated && props.isAdmin && (
-              <AdminMenu showOpenAPI={props.isOpenAPIEnabled} showDatabase={!props.isInProduction} />
+              <AdminMenu showOpenAPI={props.isOpenAPIEnabled} showDatabase={!props.isInProduction} onClick={handleMenuItemClick} />
             )}
-            <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />
-            <AccountMenu isAuthenticated={props.isAuthenticated} />
+            <LocaleMenu currentLocale={props.currentLocale} onLocaleChange={handleLocaleChange} onClick={handleMenuItemClick} />
+            <AccountMenu isAuthenticated={props.isAuthenticated} onClick={handleMenuItemClick} />
           </Nav>
         </Collapse>
       </Navbar>

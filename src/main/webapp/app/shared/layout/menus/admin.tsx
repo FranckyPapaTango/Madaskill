@@ -29,8 +29,8 @@ const adminMenuItems = () => (
   </>
 );
 
-const openAPIItem = () => (
-  <MenuItem icon="book" to="/admin/docs">
+const openAPIItem = onClick => (
+  <MenuItem icon="book" to="/admin/docs" onClick={onClick}>
     <Translate contentKey="global.menu.admin.apidocs">API</Translate>
   </MenuItem>
 );
@@ -41,11 +41,10 @@ const databaseItem = () => (
   </DropdownItem>
 );
 
-export const AdminMenu = ({ showOpenAPI, showDatabase }) => (
+export const AdminMenu = ({ showOpenAPI, showDatabase, onClick }) => (
   <NavDropdown icon="users-cog" name={translate('global.menu.admin.main')} id="admin-menu" data-cy="adminMenu">
     {adminMenuItems()}
-    {showOpenAPI && openAPIItem()}
-
+    {showOpenAPI && openAPIItem(onClick)} {/* Ajoutez onClick ici */}
     {showDatabase && databaseItem()}
   </NavDropdown>
 );

@@ -1,7 +1,7 @@
 .product-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px; /* Espace entre les produits */
+  gap: 10px; /* Espace entre les produits */
 }
 
 .cartbtn {
@@ -13,7 +13,7 @@
   flex-direction: column;
   background-color: #f5f5f5; /* Couleur de fond gris clair */
   border: 1px solid #e0e0e0; /* Bordure légère */
-  padding: 10px;
+  padding: 4x;
   border-radius: 6.28px; /* Coins arrondis */
 
   cursor: pointer; /* Définir le curseur comme une main */
@@ -38,7 +38,7 @@
   }
   /* Définir une hauteur minimale et une largeur fixe pour les éléments .product-card */
   min-height: 300px; /* Exemple de hauteur minimale */
-  min-width: 200px; /* Exemple de largeur fixe */
+  min-width: 120px; /* Exemple de largeur fixe */
 }
 
 @media screen and (max-width: 768px) {

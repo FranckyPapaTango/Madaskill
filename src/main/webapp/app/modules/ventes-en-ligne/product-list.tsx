@@ -46,11 +46,7 @@ const ProductList: React.FC = () => {
                 <div className="product-container">
                   {products.map(product => (
                     <div key={product.id}>
-                      <div
-                        className="product-card"
-                        onClick={() => showProductDetails(product)}
-                        onTouchStart={() => showProductDetails(product)}
-                      >
+                      <div className="product-card" onClick={() => showProductDetails(product)}>
                         <img src={product.linkToGenericPhotoFile} alt={product.title} />
                         <p>{product.title}</p>
                         &nbsp;&nbsp;&nbsp;

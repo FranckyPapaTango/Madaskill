@@ -12,19 +12,19 @@ export const BrandIcon = props => (
   </div>
 );
 
-export const Brand = () => (
+export const Brand = props => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
     <BrandIcon />
     <span className="brand-title">
       <Translate contentKey="global.title">Madaskill</Translate>
     </span>
-    <span className="navbar-version">{VERSION}</span>
+    {/*     <span className="navbar-version">{VERSION}</span> */}
   </NavbarBrand>
 );
 
-export const Home = () => (
+export const Home = props => (
   <NavItem>
-    <NavLink tag={Link} to="/" className="d-flex align-items-center">
+    <NavLink tag={Link} to="/" className="d-flex align-items-center" onClick={props.onClick}>
       <FontAwesomeIcon icon="home" />
       <span>
         <Translate contentKey="global.menu.home">Home</Translate>
@@ -35,7 +35,7 @@ export const Home = () => (
 
 export const VentesEnLigne = props => (
   <NavItem>
-    <NavLink tag={Link} to="/ventes-en-ligne" className="d-flex align-items-center">
+    <NavLink tag={Link} to="/ventes-en-ligne" className="d-flex align-items-center" onClick={props.onClick}>
       <FontAwesomeIcon icon={faStar} />
       <span>
         <Translate contentKey="global.menu.ventesEnLigne">Ventes En Ligne</Translate>
@@ -45,7 +45,7 @@ export const VentesEnLigne = props => (
 );
 export const Annonces = props => (
   <NavItem>
-    <NavLink tag={Link} to="/annonces" className="d-flex align-items-center">
+    <NavLink tag={Link} to="/annonces" className="d-flex align-items-center" onClick={props.onClick}>
       <FontAwesomeIcon icon="heart" />
       <span>
         <Translate contentKey="global.menu.annonces">Annonces</Translate>
@@ -55,7 +55,7 @@ export const Annonces = props => (
 );
 export const AboutUs = props => (
   <NavItem>
-    <NavLink tag={Link} to="/about-us" className="d-flex align-items-center">
+    <NavLink tag={Link} to="/about-us" className="d-flex align-items-center" onClick={props.onClick}>
       <FontAwesomeIcon icon="hand-spock" />
       <span>
         <Translate contentKey="global.menu.aboutUs">A propos</Translate>

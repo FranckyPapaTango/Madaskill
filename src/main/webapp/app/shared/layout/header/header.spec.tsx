@@ -3,10 +3,7 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
-import initStore from 'app/config/store';
-import { AboutUs } from 'app/shared/layout/header/header-components';
-import { VentesEnLigne } from 'app/shared/layout/header/header-components';
-import { Annonces } from 'app/shared/layout/header/header-components';
+import initStore from '../../../../app/config/store';
 import Header from './header';
 
 describe('Header', () => {

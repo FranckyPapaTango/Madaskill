@@ -46,23 +46,19 @@ export const VentesEnLigne = () => {
         </div>
       )}
 
-      <Col md="1" />
-      <Col md="10">
-        <h1 className="text-capitalize text-center">
-          <Translate contentKey="ventesEnLigne.title">Title</Translate>
-        </h1>
-        <div className="subtitle">
-          <div className="text-subtitle">
-            <Translate contentKey="ventesEnLigne.subtitle">Subtitle</Translate>
-          </div>
+      <h1 className="text-capitalize text-center">
+        <Translate contentKey="ventesEnLigne.title">Title</Translate>
+      </h1>
+      <div className="subtitle">
+        <div className="text-subtitle">
+          <Translate contentKey="ventesEnLigne.subtitle">Subtitle</Translate>
         </div>
-        <hr />
-        {/* <p className="text-justify">
+      </div>
+      <hr />
+      {/* <p className="text-justify">
       <Translate contentKey="ventesEnLigne.content">Content</Translate>
     </p> */}
-        <ProductList />
-      </Col>
-      <Col md="1" />
+      <ProductList />
     </Row>
   );
 };
