@@ -1351,13 +1351,17 @@
             -->
             <id>zipkin</id>
             <dependencies>
+                <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth -->
                 <dependency>
                     <groupId>org.springframework.cloud</groupId>
                     <artifactId>spring-cloud-starter-sleuth</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
                 </dependency>
+
                 <dependency>
                     <groupId>org.springframework.cloud</groupId>
                     <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -1526,7 +1530,7 @@
                     </plugin>-->
                     <plugin>
                         <artifactId>maven-clean-plugin</artifactId>
-                        <version>${maven-clean-plugin.version}</version>
+                        <version>3.1.0</version>
                         <executions>
                             <execution>
                                 <id>clean-artifacts</id>

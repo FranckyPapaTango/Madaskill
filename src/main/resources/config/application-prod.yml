@@ -56,14 +56,14 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:/path/to/your/database
+    url: jdbc:h2:file:./target/h2db/db/madaskill; # DB_CLOSE_DELAY=-1;MODE=LEGACY
     username: Madaskill
     password:
     hikari:
       poolName: Hikari
       auto-commit: false
   jpa:
-    database-platform: tech.jhipster.domain.util.FixedPostgreSQL10Dialect
+    # database-platform: tech.jhipster.domain.util.FixedPostgreSQL10Dialect
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
