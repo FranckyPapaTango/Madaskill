@@ -11,6 +11,7 @@ const stripePromise = loadStripe(
   'pk_test_51NnDxjGKnxxYnXbnKEE7DnYJofjqUv8K1tPCVT6VnGRBAKQac419adnctQgJQWDa7GnvKyrJk9VMvxWVmNA6l1FQ00aahVPN1M'
 );
 
+// Interface pour un élément du panier
 interface CartItem {
   linkToGenericPhotoFile: string;
   id: number;
@@ -19,12 +20,15 @@ interface CartItem {
   quantity: number;
 }
 
+// Interface des propriétés du composant Cart
 interface CartProps {
   cartItems: CartItem[];
   onClose: () => void;
   updateCartItems: (cartItems: CartItem[]) => void;
   resetCart: () => void;
 }
+// Exportez les interfaces
+export { CartItem, CartProps };
 
 const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
   const { resetCart, addToCart, removeFromCart } = useCart();
@@ -32,7 +36,7 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
 
   // Fonction pour calculer le sous-total d'un produit
-  const calculateSubtotal = product => {
+  const calculateSubtotal = (product: IProduct): number => {
     return product.price * product.quantity;
   };
 
@@ -46,7 +50,7 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
   };
 
   // Fonction pour formater un nombre avec séparateur de milliers et centimes (si non nuls)
-  const formatNumber = number => {
+  const formatNumber = (number: any) => {
     const parts = parseFloat(number).toFixed(2).split('.');
     const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
@@ -65,28 +69,36 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
     removeFromCart(product); // Ajoute 1 à la quantité du produit
   };
 
-  const handleBuying = async (cartItems: CartItem[]) => {
+  const handleBuying = () => {
     try {
       const totalAmount = calculateTotal() * 100;
-      const response = await fetch('/api/payment/intents', {
+
+      fetch('/api/payment/intents', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({ amount: totalAmount }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        setClientSecret(result.client_secret);
-        /*         alert(clientSecret); */ /* debugage verification */
-        setShowCheckoutForm(true);
-      } else {
-        console.error('Erreur lors de la création de la session de paiement');
-      }
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            console.error('Erreur lors de la création de la session de paiement');
+            return Promise.reject('Erreur lors de la création de la session de paiement');
+          }
+        })
+        .then(result => {
+          setClientSecret(result.client_secret);
+          /* alert(clientSecret); */ /* debugage verification */
+          setShowCheckoutForm(true);
+        })
+        .catch(error => {
+          console.error('Erreur réseau lors de la création de la session de paiement', error);
+        });
     } catch (error) {
-      console.error('Erreur réseau lors de la création de la session de paiement', error);
+      console.error('Erreur lors de la création de la session de paiement', error);
     }
   };
 
@@ -99,17 +111,21 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
   return (
     <>
       <div className="cart-modal-content">
-        {clientSecret && stripePromise && showCheckoutForm ? (
+        {clientSecret && stripePromise && showCheckoutForm && (
           <>
             <h1>Paiement</h1>
             <Elements stripe={stripePromise} options={{ clientSecret }}>
               <CheckoutForm />
             </Elements>
           </>
-        ) : (
+        )}
+
+        {!clientSecret && (
           <>
             <h2>Mon Panier</h2>
             <button onClick={handleResetClick}>Réinitialiser le panier</button>
+            <button onClick={() => handleBuying()}>Payer</button>
+            <div onClick={onClose}>X</div>
             <div className="cart-item-list-container">
               {cartItems.map(item => (
                 <div className="cart-item" key={item.id}>
@@ -127,9 +143,6 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
             <div>
               Total Global :<p className="cart-total"> {formatNumber(calculateTotal())} €</p>
             </div>
-            <button onClick={onClose}>Retour</button>
-            {/* <button onClick={() => handleBuying(cartItems)}>Acheter</button> */}
-            <button onClick={() => handleBuying(cartItems)}>Acheter</button>
           </>
         )}
       </div>

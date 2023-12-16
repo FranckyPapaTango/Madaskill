@@ -48,7 +48,7 @@ export const ProductDeleteDialog = () => {
       .delete(`/happy/delete-image/${imageName.replace('../../../content/productsImages/', '')}`)
       .then(response => {
         // Gérez la réponse de la suppression de l'image ici
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch(error => {
         // Gérez les erreurs de suppression de l'image ici

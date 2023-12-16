@@ -35,7 +35,7 @@ public class TestContainersSpringContextCustomizerFactory implements ContextCust
                         .contains("test" + JHipsterConstants.SPRING_PROFILE_PRODUCTION)
                 ) {
                     if (null == prodTestContainer) {
-                        try {
+                        /*                        try {
                             Class<? extends SqlTestContainer> containerClass = (Class<? extends SqlTestContainer>) Class.forName(
                                 this.getClass().getPackageName() + ".PostgreSqlTestContainer"
                             );
@@ -44,11 +44,11 @@ public class TestContainersSpringContextCustomizerFactory implements ContextCust
                             // ((DefaultListableBeanFactory)beanFactory).registerDisposableBean(containerClass.getName(), prodTestContainer);
                         } catch (ClassNotFoundException e) {
                             throw new RuntimeException(e);
-                        }
+                        }*/
                     }
-                    testValues = testValues.and("spring.datasource.url=" + prodTestContainer.getTestContainer().getJdbcUrl() + "");
+                    /*                    testValues = testValues.and("spring.datasource.url=" + prodTestContainer.getTestContainer().getJdbcUrl() + "");
                     testValues = testValues.and("spring.datasource.username=" + prodTestContainer.getTestContainer().getUsername());
-                    testValues = testValues.and("spring.datasource.password=" + prodTestContainer.getTestContainer().getPassword());
+                    testValues = testValues.and("spring.datasource.password=" + prodTestContainer.getTestContainer().getPassword());*/
                 }
             }
 

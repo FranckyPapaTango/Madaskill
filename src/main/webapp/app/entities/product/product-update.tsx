@@ -75,7 +75,7 @@ export const ProductUpdate = () => {
             });
 
             // Vous pouvez gérer la réponse ici, par exemple, enregistrez l'URL de l'image dans votre base de données.
-            console.log('Image uploaded:', response.data);
+            // console.log('Image uploaded:', response.data);
             // Réinitialisez le champ d'entrée de fichier après l'envoi
             setFileInput(null);
           } catch (error) {
@@ -101,7 +101,7 @@ export const ProductUpdate = () => {
             );
 
             // Vous pouvez gérer la réponse ici, par exemple, enregistrez l'URL de l'image dans votre base de données.
-            console.log('Image updated:', response.data);
+            // console.log('Image updated:', response.data);
             // Réinitialisez le champ d'entrée de fichier après l'envoi
             setFileInput(null);
           } catch (error) {

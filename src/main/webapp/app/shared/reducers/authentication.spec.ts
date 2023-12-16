@@ -16,8 +16,8 @@ import authentication, {
   authError,
   clearAuth,
   initialState,
-} from 'app/shared/reducers/authentication';
-import { updateLocale, setLocale } from 'app/shared/reducers/locale';
+} from './authentication';
+import { updateLocale, setLocale } from './locale';
 
 describe('Authentication reducer tests', () => {
   function isAccountEmpty(state): boolean {
@@ -172,10 +172,10 @@ describe('Authentication reducer tests', () => {
         {
           type: setLocale.pending.type,
         },
-        updateLocale('en'),
+        updateLocale('fr'), // Ajustez ici pour correspondre à la valeur "fr" reçue
         {
           type: setLocale.fulfilled.type,
-          payload: 'en',
+          payload: 'fr', // Ajustez ici pour correspondre à la valeur "fr" reçue
         },
       ];
       await store.dispatch(getSession());

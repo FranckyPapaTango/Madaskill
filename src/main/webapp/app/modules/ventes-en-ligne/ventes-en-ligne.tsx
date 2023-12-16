@@ -8,7 +8,6 @@ import { FaShoppingCart } from 'react-icons/fa';
 import Cart from './cart';
 import { useCart, CartProvider, CartItem } from './CartContext'; // Importez les types et le context depuis le fichier CartContext
 import { IProduct } from 'app/shared/model/product.model';
-//import CartContext from './CartContext'; // Importez le context depuis le fichier CartContext
 
 export const VentesEnLigne = () => {
   const { cartItems } = useCart();
@@ -36,7 +35,7 @@ export const VentesEnLigne = () => {
           <Cart
             onClose={toggleCartModal}
             cartItems={cartItems}
-            updateCartItems={function (cartItems: CartItem[]): void {
+            updateCartItems={function (): void {
               throw new Error('Function not implemented.');
             }}
             resetCart={function (): void {
