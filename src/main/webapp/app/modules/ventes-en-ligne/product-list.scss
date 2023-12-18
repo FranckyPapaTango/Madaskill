@@ -6,6 +6,7 @@
 
 .cartbtn {
   width: 100%;
+  padding-bottom: 0px;
 }
 
 .product-card {
@@ -13,9 +14,8 @@
   flex-direction: column;
   background-color: #f5f5f5; /* Couleur de fond gris clair */
   border: 1px solid #e0e0e0; /* Bordure légère */
-  padding: 4x;
+  padding: 4px; /* Correction de la propriété mal écrite */
   border-radius: 6.28px; /* Coins arrondis */
-
   cursor: pointer; /* Définir le curseur comme une main */
 
   /* Style pour la couleur de fond jaune */
@@ -28,21 +28,35 @@
     height: auto; /* La hauteur est ajustée proportionnellement */
   }
 
+  .content {
+    flex: 1; /* Permet au contenu de prendre l'espace disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+    padding: 10px; /* Ajoute un espace autour du contenu */
+    margin-bottom: 0;
+  }
+
   p {
     margin: 0; /* Supprime la marge autour du texte */
   }
-  .price-and-button {
+
+  .price {
     font-weight: bold; /* Texte en gras */
     font-size: 13px; /* Taille de police personnalisée */
-    margin-top: auto; /* Aligne le bouton en bas de la carte */
   }
-  /* Définir une hauteur minimale et une largeur fixe pour les éléments .product-card */
-  min-height: 300px; /* Exemple de hauteur minimale */
-  min-width: 120px; /* Exemple de largeur fixe */
+
+  /* Définir une hauteur minimale pour les éléments .product-card */
+  height: 100%;
 }
 
 @media screen and (max-width: 768px) {
   .product-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    height: auto; /* Ajuster la hauteur automatiquement pour s'adapter au contenu */
+    padding-bottom: 0px;
   }
 }

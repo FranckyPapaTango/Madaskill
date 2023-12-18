@@ -125,7 +125,9 @@ const Cart: React.FC<CartProps> = ({ cartItems, onClose, updateCartItems }) => {
             <h2>Mon Panier</h2>
             <button onClick={handleResetClick}>Réinitialiser le panier</button>
             <button onClick={() => handleBuying()}>Payer</button>
-            <div onClick={onClose}>X</div>
+            <div className="close-button" onClick={onClose}>
+              X
+            </div>
             <div className="cart-item-list-container">
               {cartItems.map(item => (
                 <div className="cart-item" key={item.id}>

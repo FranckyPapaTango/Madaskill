@@ -1,13 +1,24 @@
 .cart-modal-content {
+  position: relative; /* Ajoutez cette ligne pour que la position absolue fonctionne à l'intérieur de cet élément */
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-width: 800px; /* Ajustez la largeur du modal selon vos besoins */
+  max-width: 800px;
   width: 100%;
-  max-height: 80vh; /* Définissez une hauteur maximale pour permettre le défilement */
-  overflow-y: auto; /* Ajoutez la barre de défilement verticale si nécessaire */
+  max-height: 80vh;
+  overflow-y: auto;
   text-align: center;
+
+  .close-button {
+    position: absolute;
+    top: 10px; /* Ajustez la distance depuis le haut selon vos besoins */
+    right: 10px; /* Ajustez la distance depuis la droite selon vos besoins */
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
 }
 
 .cart-item {
@@ -29,7 +40,7 @@
 }
 
 .cart-total {
-  font-size: 24px; /* Taille de police plus grande */
-  font-weight: bold; /* Texte en gras */
-  color: darkgreen; /* Couleur du texte en vert foncé */
+  font-size: 24px;
+  font-weight: bold;
+  color: darkgreen;
 }

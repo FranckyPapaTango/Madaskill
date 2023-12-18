@@ -45,17 +45,19 @@ const ProductList: React.FC = () => {
               {products && products.length > 0 ? (
                 <div className="product-container">
                   {products.map(product => (
-                    <div key={product.id}>
-                      <div className="product-card" onClick={() => showProductDetails(product)}>
+                    <div className="product-card" key={product.id}>
+                      <div onClick={() => showProductDetails(product)}>
                         <img src={product.linkToGenericPhotoFile} alt={product.title} />
-                        <p>{product.title}</p>
-                        &nbsp;&nbsp;&nbsp;
-                        <p>{product.description}</p>
-                        <div className="price-and-button">
+                        <div className="content">
+                          <p>{product.title}</p>
                           &nbsp;&nbsp;&nbsp;
-                          {product.price % 1 === 0
-                            ? product.price.toFixed(0).replace(/\d(?=(\d{3})+(?!\d))/g, '$& ') + ' €'
-                            : product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ') + ' €'}
+                          <p>{product.description}</p>
+                          <p className="price">
+                            &nbsp;&nbsp;&nbsp;
+                            {product.price % 1 === 0
+                              ? product.price.toFixed(0).replace(/\d(?=(\d{3})+(?!\d))/g, '$& ') + ' €'
+                              : product.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ') + ' €'}
+                          </p>
                         </div>
                       </div>
                       <button className="cartbtn" onClick={() => addToCart(product)}>
