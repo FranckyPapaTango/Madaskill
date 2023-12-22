@@ -193,6 +193,7 @@ server:
     session:
       cookie:
         http-only: true
+  use-forward-headers: true
 
 springdoc:
   show-actuator: true

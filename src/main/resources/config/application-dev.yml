@@ -88,6 +88,7 @@ spring:
 
 server:
   port: 8080
+  use-forward-headers: true
 
 # ===================================================================
 # JHipster specific properties
