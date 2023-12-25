@@ -55,13 +55,14 @@ public class SecurityConfiguration {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin(" https://c496-37-175-6-81.ngrok-free.app"); // Replace with your ngrok URL
-        config.addAllowedHeader("*");
+        config.addAllowedOrigin("https://rafaros-it.fr"); // Replace with your Backend URL
+        config.addAllowedOrigin("*"); // À restreindre une fois les tests réussis
         config.addAllowedMethod("OPTIONS");
         config.addAllowedMethod("GET");
         config.addAllowedMethod("POST");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("DELETE");
+        config.addAllowedHeader("*");
         source.registerCorsConfiguration("/api/**", config); // Adjust the path pattern as needed
         return new CorsFilter((CorsConfigurationSource) source);
     }

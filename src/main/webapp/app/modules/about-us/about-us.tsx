@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
               </div>
             </ul>
             <ul className="team-member">
-              <img src="url_d../../../content/superHeros/Spiderman.jpg" alt="Tiana Randria" className="member-photo" />
+              <img src="../../../content/superHeros/Spiderman.jpg" alt="Tiana Randria" className="member-photo" />
               <div className="member-info">
                 <p>Tiana Randria</p>
               </div>
