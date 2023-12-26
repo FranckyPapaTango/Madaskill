@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+//import './axios-config'; // Importez le fichier axios-config.js au début de votre composant
 import { Storage } from 'react-jhipster';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { serializeAxiosError } from './reducer.utils';

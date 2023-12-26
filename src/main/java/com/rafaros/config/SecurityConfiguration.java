@@ -55,7 +55,7 @@ public class SecurityConfiguration {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("https://rafaros-it.fr"); // Replace with your Backend URL
+        config.addAllowedOrigin("http://localhost:8080"); // Replace with your Backend URL
         config.addAllowedOrigin("*"); // À restreindre une fois les tests réussis
         config.addAllowedMethod("OPTIONS");
         config.addAllowedMethod("GET");
