@@ -3,6 +3,7 @@
   "version": "0.0.1-SNAPSHOT",
   "private": true,
   "description": "Description for Madaskill",
+  "homepage": "http://www.rafaros-it.fr/",
   "license": "UNLICENSED",
   "scripts": {
     "app:start": "./mvnw",
@@ -200,6 +201,5 @@
   },
   "cacheDirectories": [
     "node_modules"
-  ],
-  "proxy": "http://localhost:8080"
+  ]
 }
