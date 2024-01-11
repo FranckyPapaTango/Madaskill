@@ -48,9 +48,10 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/madaskill;DB_CLOSE_DELAY=-1;MODE=LEGACY
-    username: Madaskill
-    password:
+    url: jdbc:postgresql://localhost:5432/madaskill
+    username: root
+    password: root1A@@@
+    driver-class-name: org.postgresql.Drive
     hikari:
       poolName: Hikari
       auto-commit: false
