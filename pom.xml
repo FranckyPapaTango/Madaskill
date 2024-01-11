@@ -8,7 +8,7 @@
     <groupId>com.rafaros</groupId>
     <artifactId>madaskill</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>Madaskill</name>
     <description>Description for Madaskill</description>
 
@@ -295,10 +295,18 @@
             <groupId>org.zalando</groupId>
             <artifactId>problem-spring-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-websocket</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
@@ -1158,7 +1166,7 @@
         <profile>
             <id>prod</id>
             <dependencies>
-<!--                <dependency>
+               <dependency>
                     <groupId>org.testcontainers</groupId>
                     <artifactId>postgresql</artifactId>
                     <scope>test</scope>
@@ -1166,7 +1174,7 @@
                 <dependency>
                     <groupId>org.postgresql</groupId>
                     <artifactId>postgresql</artifactId>
-                </dependency>-->
+                </dependency>
             </dependencies>
             <build>
                 <pluginManagement>
