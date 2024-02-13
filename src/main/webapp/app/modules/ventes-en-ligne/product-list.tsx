@@ -5,7 +5,7 @@ import { IProduct } from 'app/shared/model/product.model';
 import { Translate } from 'react-jhipster';
 import './product-list.scss';
 import Cart from './cart';
-import { useCart } from './CartContext';
+//import { useCart } from './CartContext';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -31,7 +31,7 @@ const ProductList: React.FC = () => {
   };
 
   // Fonction pour ajouter un produit au panier
-  const { addToCart } = useCart(); // Utilisez useCart pour ajouter des produits au panier
+  //const { addToCart } = useCart(); // Utilisez useCart pour ajouter des produits au panier
 
   return (
     <div>
@@ -60,9 +60,9 @@ const ProductList: React.FC = () => {
                           </p>
                         </div>
                       </div>
-                      <button className="cartbtn" onClick={() => addToCart(product)}>
+                      {/*                       <button className="cartbtn" onClick={() => addToCart(product)}>
                         Ajouter au Panier
-                      </button>{' '}
+                      </button> */}{' '}
                       {/* Bouton "Add to Cart" */}
                     </div>
                   ))}

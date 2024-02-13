@@ -23,12 +23,13 @@ export interface IProduct {
   availableSizes?: string | null;
   currencyFormat?: string | null;
   isFreeShipping?: boolean | null;
-  price?: number;
+  price: number;
   style?: string | null;
   installments?: number | null;
   photos?: IPhoto[] | null;
   lineItem?: ILineItem | null;
   user?: IApplicationUser | null;
+  quantity?: number; // Ajoutez la propriété 'quantity'
 }
 
 export const defaultValue: Readonly<IProduct> = {
@@ -36,4 +37,5 @@ export const defaultValue: Readonly<IProduct> = {
   livemode: false,
   shippable: false,
   isFreeShipping: false,
+  price: 0, // Assurez-vous que price est inclus avec une valeur par défaut
 };

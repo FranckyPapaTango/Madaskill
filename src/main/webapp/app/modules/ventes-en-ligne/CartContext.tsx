@@ -29,6 +29,7 @@ export const CartProvider: React.FC<ICartContext> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: IProduct) => {
+    //  const addToCart = (product: Omit<IProduct, 'quantity'>) => {
     const existingItemIndex = cartItems.findIndex(item => item.product.id === product.id);
 
     if (existingItemIndex !== -1) {

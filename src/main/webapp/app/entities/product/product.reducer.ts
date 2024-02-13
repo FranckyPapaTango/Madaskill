@@ -88,7 +88,8 @@ export const ProductSlice = createEntitySlice({
       .addCase(deleteEntity.fulfilled, state => {
         state.updating = false;
         state.updateSuccess = true;
-        state.entity = {};
+        // state.entity = {};
+        state.entity = defaultValue;
       })
       .addMatcher(isFulfilled(getEntities), (state, action) => {
         const { data, headers } = action.payload;
