@@ -8,16 +8,6 @@ export interface IProduct {
   linkToGenericPhotoFile: string; // Autres propriétés de produit
 }
 
-interface ICartContext {
-  cartItems: IProduct[];
-  addToCart: (product: IProduct) => void;
-  resetCart: () => void;
-  removeFromCart: (product: IProduct) => void; // Ajoutez la méthode removeFromCart
-  children?: React.ReactNode;
-}
-
-export const CartContext = createContext<ICartContext | undefined>(undefined); // Définissez CartContext comme une exportation nommée
-
 export interface CartItem extends IProduct {
   product: IProduct; // Référence au produit (IProduct)
   quantity: number; // Quantité de fois que le produit a été ajouté au panier
@@ -25,11 +15,20 @@ export interface CartItem extends IProduct {
   linkToGenericPhotoFile: string; // Ajoutez l'attribut pour l'image
 }
 
+interface ICartContext {
+  cartItems: CartItem[]; // Utilisez le type CartItem au lieu de IProduct
+  addToCart: (product: IProduct) => void;
+  resetCart: () => void;
+  removeFromCart: (product: IProduct) => void; // Ajoutez la méthode removeFromCart
+  children?: React.ReactNode;
+}
+
+export const CartContext = createContext<ICartContext | undefined>(undefined);
+
 export const CartProvider: React.FC<ICartContext> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: IProduct) => {
-    //  const addToCart = (product: Omit<IProduct, 'quantity'>) => {
     const existingItemIndex = cartItems.findIndex(item => item.product.id === product.id);
 
     if (existingItemIndex !== -1) {
@@ -42,11 +41,11 @@ export const CartProvider: React.FC<ICartContext> = ({ children }) => {
       const newCartItem: CartItem = {
         product,
         quantity: 1,
-        subtotal: 0,
+        subtotal: product.price,
         price: product.price,
         id: product.id,
         title: product.title,
-        linkToGenericPhotoFile: product.linkToGenericPhotoFile, // Ajoutez l'attribut pour l'image
+        linkToGenericPhotoFile: product.linkToGenericPhotoFile,
       };
       setCartItems([...cartItems, newCartItem]);
     }

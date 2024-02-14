@@ -7,7 +7,11 @@ import './product-list.scss';
 import Cart from './cart';
 //import { useCart } from './CartContext';
 
-const ProductList: React.FC = () => {
+interface ProductListProps {
+  toggleCartModal: () => void;
+}
+
+const ProductList: React.FC<ProductListProps> = ({ toggleCartModal }) => {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState<IProduct | null>(null);
 
@@ -36,7 +40,8 @@ const ProductList: React.FC = () => {
   return (
     <div>
       {selectedProduct ? (
-        <ProductDetails product={selectedProduct} onBack={goBackToList} />
+        // <ProductDetails  product={selectedProduct} onBack={goBackToList} />
+        <ProductDetails product={selectedProduct} onBack={goBackToList} toggleCartModal={toggleCartModal} />
       ) : (
         <>
           <div>

@@ -7,6 +7,7 @@ import Cart from './cart';
 interface ProductDetailsProps {
   product: IProduct;
   onBack: () => void;
+  toggleCartModal: () => void;
 }
 
 interface IPhoto {
@@ -16,15 +17,11 @@ interface IPhoto {
   description: string;
 }
 
-const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onBack }) => {
+const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onBack, toggleCartModal }) => {
   const [photos, setPhotos] = useState<IPhoto[]>([]);
   const { cartItems } = useCart();
   // Fonction pour ajouter un produit au panier
   const { addToCart } = useCart(); // Utilisez useCart pour ajouter des produits au panier
-  const [isCartModalVisible, setIsCartModalVisible] = useState(false);
-  const toggleCartModal = () => {
-    setIsCartModalVisible(!isCartModalVisible);
-  };
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -39,6 +36,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onBack }) => {
 
     fetchPhotos();
   }, [product.id]);
+
+  function onViewCart(): void {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <div className="product-details">
@@ -57,28 +58,20 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onBack }) => {
         {/* <button onClick={() => addToCart({ ...product, quantity: 1, id: product.id || 0, title: 'Product Title' })}>Ajouter au Panier</button> */}
         <button
           onClick={() =>
-            addToCart({ ...product, quantity: 1, id: product.id || 0, title: 'Product Title', linkToGenericPhotoFile: 'default-photo.jpg' })
+            addToCart({
+              ...product,
+              quantity: 1,
+              id: product.id || 0,
+              title: product.title,
+              linkToGenericPhotoFile: product.linkToGenericPhotoFile,
+            })
           }
         >
           Ajouter au Panier
         </button>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button onClick={() => toggleCartModal()}>Voir Panier</button> {/* Ajoutez un bouton pour afficher le panier */}
-        {/* Affichage du modal du panier */}
-        {isCartModalVisible && (
-          <div className="cart-modal">
-            <Cart
-              onClose={toggleCartModal}
-              cartItems={cartItems}
-              updateCartItems={function (): void {
-                throw new Error('Function not implemented.');
-              }}
-              resetCart={function (): void {
-                throw new Error('Function not implemented.');
-              }}
-            />
-          </div>
-        )}
+        {/* Ajoutez un bouton pour afficher le panier */}
+        <button onClick={toggleCartModal}>Voir Panier</button> {/* Utilisez la fonction toggleCartModal directement */}
       </div>
 
       {Array.isArray(photos) &&

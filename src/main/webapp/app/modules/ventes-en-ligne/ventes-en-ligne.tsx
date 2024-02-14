@@ -57,7 +57,8 @@ export const VentesEnLigne = () => {
       {/* <p className="text-justify">
       <Translate contentKey="ventesEnLigne.content">Content</Translate>
     </p> */}
-      <ProductList />
+      {/* <ProductList /> */}
+      <ProductList toggleCartModal={toggleCartModal} />
     </Row>
   );
 };
