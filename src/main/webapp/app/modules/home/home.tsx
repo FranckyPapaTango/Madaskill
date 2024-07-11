@@ -7,7 +7,8 @@ import { useAppSelector } from 'app/config/store';
 
 export const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
-  const marqueeText = 'Votre texte défilant ici'; // Remplacez par le texte que vous souhaitez faire défiler
+  const marqueeText =
+    "l'Association Madaskill oeuvre pour le Commerce Equitable et agit poour la Révolution Technologique et Industrielle Verte."; // Remplacez par le texte que vous souhaitez faire défiler
 
   return (
     <Row>
@@ -17,10 +18,12 @@ export const Home = () => {
       <Col md="9">
         <div className="marquee">{marqueeText}</div>
         <h2>
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
+          {/* <Translate contentKey="home.title">Welcome, Java Hipster!</Translate> */}
+          <p>Tongasoa ! (Welcome, Bienvenu)</p>
         </h2>
         <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
+          {/* <Translate contentKey="home.subtitle">This is your homepage</Translate> */}
+          Madaskill
         </p>
         {account?.login ? (
           <div>
@@ -53,7 +56,7 @@ export const Home = () => {
             </Alert>
           </div>
         )}
-        <p>
+        {/*         <p>
           <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
         </p>
 
@@ -91,7 +94,7 @@ export const Home = () => {
             GitHub
           </a>
           !
-        </p>
+        </p> */}
       </Col>
     </Row>
   );

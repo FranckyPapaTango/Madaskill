@@ -27,10 +27,10 @@ springdoc:
 file:
   base-path: src/main/webapp/content/productsImages
 ---
-stripe:
-  secretKey: sk_test_51NnDxjGKnxxYnXbnd2r84JudjE7DZnzbbfhwjPD6kKFWBWe3Uy5M0IR25tNcmlbuxZz6pbqMWFmQCQmkJE9WDzED00vqIYNx5e
-  publicKey: pk_test_51NnDxjGKnxxYnXbnKEE7DnYJofjqUv8K1tPCVT6VnGRBAKQac419adnctQgJQWDa7GnvKyrJk9VMvxWVmNA6l1FQ00aahVPN1M
----
+# stripe:
+#  secretKey: sk_test_51PX9wg2NTURwCoUspR5Mb8S7i3uO1fIWJXGltWNgT362GlB2mik9lk79nOHpOsFcDxN03BcKnIwbQTdWQEdX99iV00otnxN1r2
+#  publicKey: pk_test_51PX9wg2NTURwCoUsjzSzsLgy9Y6aBFJCII3rcQ5iPAjHP5jBiBpUcqGLdLdnpgVlZ1LLzRph00xVr5OrfK2YqG2Y00CR8ZMic4
+
 eureka:
   client:
     enabled: true

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import React from 'react';
 
 const stripePromise = loadStripe(
-  'pk_test_51NnDxjGKnxxYnXbnKEE7DnYJofjqUv8K1tPCVT6VnGRBAKQac419adnctQgJQWDa7GnvKyrJk9VMvxWVmNA6l1FQ00aahVPN1M'
+  'pk_test_51PX9wg2NTURwCoUsjzSzsLgy9Y6aBFJCII3rcQ5iPAjHP5jBiBpUcqGLdLdnpgVlZ1LLzRph00xVr5OrfK2YqG2Y00CR8ZMic4'
 );
 
 // Interface pour un élément du panier

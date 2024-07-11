@@ -10,16 +10,18 @@ import { Col, Row } from 'reactstrap';
 const Footer = () => (
   <div className="footer page-content">
     <footer className="footer-container">
-      <p>
+      {/*       <p>
         <Translate contentKey="footer">Your footer</Translate>
       </p>
-
+ */}
       <div className="text-blocks">
         <Col md={3} sm={6}>
           <div className="text-block">
-            Sté François Yvon RAFARALAHY
+            Concepteur-Développeur :
             <br />
-            Freelance Programmation Informatique
+            <a>Sté François Yvon RAFARALAHY (Freelance)</a>
+            <br />
+            SIRET 88966343100019
             <br />
             92120 Montrouge - FRANCE
           </div>
@@ -33,7 +35,13 @@ const Footer = () => (
           </div>
         </Col>
         <Col md={3} sm={6}>
-          <div className="text-block">Copyright &copy; 2023</div>
+          <div className="text-block">
+            Copyright &copy; 2023
+            <br />
+            <a className="text-white" href="https://rafaros-it.fr/" target="_blank">
+              rafaros-it.fr
+            </a>
+          </div>
         </Col>
         {/* <Col md={3} sm={6}>
           <div className="text-block">Bloc 4</div>
