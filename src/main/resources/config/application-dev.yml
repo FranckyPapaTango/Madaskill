@@ -23,6 +23,7 @@ logging:
 ---
 file:
   base-path: src/main/webapp/content/productsImages
+  backup-script-path: MadaskillBackup.sql
 ---
 stripe:
   secretKey: sk_test_51PX9wg2NTURwCoUspR5Mb8S7i3uO1fIWJXGltWNgT362GlB2mik9lk79nOHpOsFcDxN03BcKnIwbQTdWQEdX99iV00otnxN1r2

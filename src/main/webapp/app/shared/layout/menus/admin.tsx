@@ -25,6 +25,10 @@ const adminMenuItems = () => (
     <MenuItem icon="tasks" to="/admin/logs">
       <Translate contentKey="global.menu.admin.logs">Logs</Translate>
     </MenuItem>
+    <MenuItem icon="database" to="/admin/backup">
+      {/* <Translate contentKey="global.menu.admin.backup">Create Database Backup</Translate> */}
+      <p>Create Database Backup</p>
+    </MenuItem>
     {/* jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here */}
   </>
 );
@@ -44,7 +48,7 @@ const databaseItem = () => (
 export const AdminMenu = ({ showOpenAPI, showDatabase, onClick }) => (
   <NavDropdown icon="users-cog" name={translate('global.menu.admin.main')} id="admin-menu" data-cy="adminMenu">
     {adminMenuItems()}
-    {showOpenAPI && openAPIItem(onClick)} {/* Ajoutez onClick ici */}
+    {showOpenAPI && openAPIItem(onClick)}
     {showDatabase && databaseItem()}
   </NavDropdown>
 );
