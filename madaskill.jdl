@@ -1,36 +1,27 @@
 entity Post {
     title String required,
     body String,
+    urlPicture String,
     categorie String,
     resumee String,
     auteur String,
-    datePersistence Instant required
+    datePersistence Instant required,
+    dateUpdate Instant
 }
 
 entity Product {
-    object String,
-    active Boolean,
-    created Long,
-    defaultPrice Double,
-    description String,
-    livemode Boolean,
-    name String,
+    name String required,
     shippable Boolean,
-    statementDescriptor String,
-    taxCode String,
-    unitLabel String,
-    updated Long,
-    url String,
-    sku String,
-    title String required,
-    linkToGenericPhotoFile String,
-    availableSizes String,
-    currencyFormat String,
-    description String,
-    isFreeShipping Boolean,
+    description String required,
+    livemode Boolean,
     price Double required,
-    style String,
-    installments Integer
+    currencyFormat String required,
+    taxeAmount Double required,
+    linkToGenericPhotoFile String required,
+    availableSizes String,
+    categorie String,
+    datePersistence Instant required,
+    dateUpdate Instant
 }
 
 
@@ -42,191 +33,61 @@ entity ApplicationUser {
     paysCountry String required
 }
 
-
 entity Customer {
-  id String required,
-  object String,
-  address String,
-  balance Integer,
-  created Long,
-  currency String,
-  defaultSource String,
-  delinquent Boolean,
-  description String,
-  discount Integer,
-  email String,
-  invoicePrefix String,
-  livemode Boolean,
-  name String,
-  nextInvoiceSequence Integer,
-  phone String,
-  shipping String,
-  taxExempt String,
-  testClock ZonedDateTime
-}
-
-entity InvoiceSettings {
-  id Long required,
-  customFields String,
-  defaultPaymentMethod String,
-  footer String,
-  renderingOptions String
-}
-
-entity Metadata {
-  id Long required,
-  orderId String
-}
-
-entity PreferredLocales {
-id Long required,
-preferredLocales String
-}
-
-
-entity Commande {
-    dateCommande Instant required,
-    tva Double required,
-    taxesTotales Double required,
-    montantAmountTtc Double required,
-    isPayedIsFacture Boolean required
+    id String required,
+    object String,
+    name String required,
+    lastName String required,
+    address String,
+    zipCode String,
+    country String required,
+    email String,
+    phone String required,
+    datePersistence Instant required,
+    dateUpdate Instant
 }
 
 
 entity Photo {
-    title String,
+    title String required,
     linkToPhotoFile String required,
     description String,
     author String,
-    owner String,
+    owner String required,
     height Integer,
     width Integer,
-    taken Instant,
+    taken Instant required,
     uploaded Instant
 }
 
+
+
 entity Invoice {
-  id String,
-  object String,
-  accountCountry String,
-  accountName String,
-  accountTaxIds String,
-  amountDue Long,
-  amountPaid Long,
-  amountRemaining Long,
-  amountShipping Long,
-  application String,
-  applicationFeeAmount Long,
-  attemptCount Integer,
-  attempted Boolean,
-  autoAdvance Boolean,
-  billingReason String,
-  charge String,
-  collectionMethod String,
-  created Long,
-  currency String,
-  customFields String,
-  customerStringValue String,
-  customerAddress String,
-  customerEmail String,
-  customerName String,
-  customerPhone String,
-  customerShipping String,
-  customerTaxExempt String,
-  customerTaxIds String,
-  defaultPaymentMethod String,
-  defaultSource String,
-  defaultTaxRates String,
-   description String,
-  discount String,
-  discounts String,
-  dueDate Long,
-  effectiveAt Long,
-  endingBalance Long,
-  footer String,
-  fromInvoice String,
-  hostedInvoiceUrl String,
-  invoicePdf String,
-  lastFinalizationError String,
-  latestRevision String,
-  livemode Boolean,
-  metadata String,
-  nextPaymentAttempt Long,
-  number String,
-  onBehalfOf String,
-  paid Boolean,
-  paidOutOfBand Boolean,
-  paymentIntent String,
-  paymentSettings String,
-  periodEnd Long,
-  periodStart Long,
-  postPaymentCreditNotesAmount Long,
-  prePaymentCreditNotesAmount Long,
-  quote String,
-  receiptNumber String,
-  rendering String,
-  renderingOptions String,
-  shippingCost Long,
-  shippingDetails String,
-  startingBalance Long,
-  statementDescriptor String,
-  status String,
-  statusTransitions String,
-  subscription String,
-  subscriptionDetails String,
-  subtotal Long,
-  subtotalExcludingTax Long,
-  tax String,
-  testClock String,
-  total Long,
-  totalDiscountAmounts String,
-  totalExcludingTax Long,
-  totalTaxAmounts String,
-  transferData String,
-  webhooksDeliveredAt Long
+    id String,
+    object String,
+    isPayedIsFacture Boolean required,
+    amountPaid Long required,
+    transportCosts Double required,
+    application String,
+    invoicePdf String,
+    livemode Boolean,
+    tax Double required,
+    datePersistence Instant required,
+    dateUpdate Instant
 }
 
 entity LineItem {
-  id String,
-  object String,
-  amount Long,
-  amountExcludingTax Long,
-  currency String,
-  description String,
-  discountAmounts String,
-  discountable Boolean,
-  discounts String,
-  invoiceItem String,
-  livemode Boolean,
-  metadata String,
-  periodEnd Long,
-  periodStart Long,
-  price String,
-  proration Boolean,
-  prorationDetails String,
-  quantity Integer,
-  subscription String,
-  taxAmounts String,
-  taxRates String,
-  type String,
-  unitAmountExcludingTax String
+    id String,
+    object String,
+    quantity Integer required
 }
 
-
-relationship OneToOne {
-  Customer{invoiceSettings} to InvoiceSettings,
-  Customer{metadata} to Metadata
-}
-
-relationship ManyToMany {
-  Customer{preferredLocales} to PreferredLocales{customer}
-}
 
 
 relationship OneToMany {
     Post{photos} to Photo{post},
     Product{photos} to Photo{product}
-    Commande{lineItem} to LineItem{commande},
+    Invoice{lineItem} to LineItem{invoice},
     ApplicationUser{post} to Post{user},
     ApplicationUser{product} to Product{user},
 
@@ -235,15 +96,14 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
-    ApplicationUser{internalUser} to User,
+    ApplicationUser{internalUser} to User with builtInEntity,
     LineItem{product} to Product{lineItem},
 
-     Invoice{commande} to Commande{customer}
 }
 
 // Set pagination options
 // paginate JobHistory, Employee with infinite-scroll
-paginate Post, Product, Customer, PreferredLocales, Metadata, InvoiceSettings, Commande, Photo, Invoice, LineItem, ApplicationUser with pagination
+paginate Post, Product, Customer, Photo, Invoice, LineItem, ApplicationUser with pagination
 
 // Use Data Transfer Objects (DTO)
 // dto * with mapstruct
